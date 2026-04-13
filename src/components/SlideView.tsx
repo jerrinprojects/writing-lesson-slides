@@ -4,19 +4,21 @@ interface SlideViewProps {
   slide: Slide;
   current: number;
   total: number;
+  lessonTitle: string;
   onPrev: () => void;
   onNext: () => void;
+  onBack: () => void;
 }
 
 function renderBody(text: string) {
-  return text.split("\n").map((line, lineIdx) => {
+  return text.split("\n").map((line, lineIdx, arr) => {
     const parts = line.split(/\*\*(.*?)\*\*/g);
     return (
       <span key={lineIdx}>
         {parts.map((part, i) =>
           i % 2 === 1 ? <strong key={i}>{part}</strong> : <span key={i}>{part}</span>
         )}
-        {lineIdx < text.split("\n").length - 1 && <br />}
+        {lineIdx < arr.length - 1 && <br />}
       </span>
     );
   });
@@ -33,11 +35,19 @@ const typeConfig: Record<string, { color: string; label: string }> = {
   think:    { color: "#06b6d4", label: "THINK" },
 };
 
-export default function SlideView({ slide, current, total, onPrev, onNext }: SlideViewProps) {
+export default function SlideView({ slide, current, total, lessonTitle, onPrev, onNext, onBack }: SlideViewProps) {
   const config = typeConfig[slide.content.type] ?? { color: "#4f86f7", label: slide.content.type.toUpperCase() };
 
   return (
     <div className="slide-view">
+      {/* Mobile only: top bar with back button */}
+      <div className="mobile-topbar">
+        <button className="back-btn" onClick={onBack}>
+          ← All Lessons
+        </button>
+        <span style={{ fontSize: "0.9rem", color: "#64748b", fontWeight: 600 }}>{lessonTitle}</span>
+      </div>
+
       <div className="slide-card" style={{ borderTop: `6px solid ${config.color}` }}>
         <div className="slide-type-badge" style={{ backgroundColor: config.color }}>
           {config.label}
@@ -57,7 +67,7 @@ export default function SlideView({ slide, current, total, onPrev, onNext }: Sli
 
         {slide.content.tip && (
           <div className="slide-tip">
-            <span className="tip-icon">💡</span>
+            <span className="tip-label">Tip:</span>
             <span>{slide.content.tip}</span>
           </div>
         )}
@@ -65,13 +75,13 @@ export default function SlideView({ slide, current, total, onPrev, onNext }: Sli
 
       <div className="nav-bar">
         <button className="nav-btn" onClick={onPrev} disabled={current === 0}>
-          ◀ Prev
+          Prev
         </button>
         <span className="slide-counter">
           {current + 1} / {total}
         </span>
         <button className="nav-btn" onClick={onNext} disabled={current === total - 1}>
-          Next ▶
+          Next
         </button>
       </div>
     </div>

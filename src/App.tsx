@@ -65,8 +65,10 @@ export default function App() {
         slide={activeLesson.slides[current]}
         current={current}
         total={total}
+        lessonTitle={activeLesson.title}
         onPrev={goPrev}
         onNext={goNext}
+        onBack={goHome}
       />
     </div>
   );
