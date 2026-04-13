@@ -1,33 +1,34 @@
-import type { Lesson } from "../slides";
+import type { Category } from "../slides";
 
 interface HomePageProps {
-  lessons: Lesson[];
-  onSelect: (lessonId: string) => void;
+  categories: Category[];
+  onSelect: (categoryId: Category["id"]) => void;
 }
 
-export default function HomePage({ lessons, onSelect }: HomePageProps) {
+export default function HomePage({ categories, onSelect }: HomePageProps) {
   return (
     <div className="home">
       <div className="home-header">
-        <h1 className="home-title">✏️ Writing Lessons</h1>
-        <p className="home-subtitle">Choose a lesson to get started</p>
+        <h1 className="home-title">Writing Lessons</h1>
+        <p className="home-subtitle">Choose a section to get started</p>
       </div>
 
-      <div className="lesson-grid">
-        {lessons.map((lesson) => (
+      <div className="category-grid">
+        {categories.map((cat) => (
           <button
-            key={lesson.id}
-            className="lesson-card"
-            style={{ borderTop: `5px solid ${lesson.color}` }}
-            onClick={() => onSelect(lesson.id)}
+            key={cat.id}
+            className="category-card"
+            style={{ borderTop: `6px solid ${cat.color}` }}
+            onClick={() => onSelect(cat.id)}
           >
-            <div className="lesson-card-dot" style={{ backgroundColor: lesson.color }} />
-            <h2 className="lesson-card-title">{lesson.title}</h2>
-            <p className="lesson-card-desc">{lesson.description}</p>
-            <div className="lesson-card-meta">
-              <span>{lesson.slides.length} slides</span>
-              <span className="lesson-card-arrow">Start →</span>
+            <div className="category-card-icon" style={{ backgroundColor: cat.color }}>
+              {cat.icon}
             </div>
+            <h2 className="category-card-title">{cat.title}</h2>
+            <p className="category-card-desc">{cat.description}</p>
+            <span className="category-card-arrow" style={{ color: cat.color }}>
+              Open →
+            </span>
           </button>
         ))}
       </div>

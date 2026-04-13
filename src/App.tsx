@@ -2,23 +2,45 @@ import { useCallback, useEffect, useState } from "react";
 import Sidebar from "./components/Sidebar";
 import SlideView from "./components/SlideView";
 import HomePage from "./components/HomePage";
-import { lessons } from "./slides";
+import CategoryPage from "./components/CategoryPage";
+import { categories, lessons } from "./slides";
+import type { Category } from "./slides";
 import "./App.css";
 
+type View = "home" | "category" | "lesson";
+
 export default function App() {
+  const [view, setView] = useState<View>("home");
+  const [activeCategoryId, setActiveCategoryId] = useState<Category["id"] | null>(null);
   const [activeLessonId, setActiveLessonId] = useState<string | null>(null);
   const [current, setCurrent] = useState(0);
 
+  const activeCategory = categories.find((c) => c.id === activeCategoryId) ?? null;
   const activeLesson = lessons.find((l) => l.id === activeLessonId) ?? null;
+  const categoryLessons = lessons.filter((l) => l.category === activeCategoryId);
+
+  const openCategory = (id: Category["id"]) => {
+    setActiveCategoryId(id);
+    setView("category");
+  };
 
   const openLesson = (id: string) => {
     setCurrent(0);
     setActiveLessonId(id);
+    setView("lesson");
+  };
+
+  const goCategory = () => {
+    setActiveLessonId(null);
+    setCurrent(0);
+    setView("category");
   };
 
   const goHome = () => {
     setActiveLessonId(null);
+    setActiveCategoryId(null);
     setCurrent(0);
+    setView("home");
   };
 
   const total = activeLesson?.slides.length ?? 0;
@@ -32,7 +54,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (!activeLesson) return;
+    if (view !== "lesson") return;
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight" || e.key === " ") {
         e.preventDefault();
@@ -41,35 +63,50 @@ export default function App() {
         e.preventDefault();
         goPrev();
       } else if (e.key === "Escape") {
-        goHome();
+        goCategory();
       }
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [activeLesson, goNext, goPrev]);
+  }, [view, goNext, goPrev]);
 
-  if (!activeLesson) {
-    return <HomePage lessons={lessons} onSelect={openLesson} />;
+  if (view === "home") {
+    return <HomePage categories={categories} onSelect={openCategory} />;
   }
 
-  return (
-    <div className="app">
-      <Sidebar
-        lessonTitle={activeLesson.title}
-        slides={activeLesson.slides}
-        currentIndex={current}
-        onSelect={setCurrent}
+  if (view === "category" && activeCategory) {
+    return (
+      <CategoryPage
+        category={activeCategory}
+        lessons={categoryLessons}
+        onSelect={openLesson}
         onBack={goHome}
       />
-      <SlideView
-        slide={activeLesson.slides[current]}
-        current={current}
-        total={total}
-        lessonTitle={activeLesson.title}
-        onPrev={goPrev}
-        onNext={goNext}
-        onBack={goHome}
-      />
-    </div>
-  );
+    );
+  }
+
+  if (view === "lesson" && activeLesson) {
+    return (
+      <div className="app">
+        <Sidebar
+          lessonTitle={activeLesson.title}
+          slides={activeLesson.slides}
+          currentIndex={current}
+          onSelect={setCurrent}
+          onBack={goCategory}
+        />
+        <SlideView
+          slide={activeLesson.slides[current]}
+          current={current}
+          total={total}
+          lessonTitle={activeLesson.title}
+          onPrev={goPrev}
+          onNext={goNext}
+          onBack={goCategory}
+        />
+      </div>
+    );
+  }
+
+  return null;
 }
