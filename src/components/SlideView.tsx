@@ -9,29 +9,38 @@ interface SlideViewProps {
 }
 
 function renderBody(text: string) {
-  // Bold **text** support
-  const parts = text.split(/\*\*(.*?)\*\*/g);
-  return parts.map((part, i) =>
-    i % 2 === 1 ? <strong key={i}>{part}</strong> : <span key={i}>{part}</span>
-  );
+  return text.split("\n").map((line, lineIdx) => {
+    const parts = line.split(/\*\*(.*?)\*\*/g);
+    return (
+      <span key={lineIdx}>
+        {parts.map((part, i) =>
+          i % 2 === 1 ? <strong key={i}>{part}</strong> : <span key={i}>{part}</span>
+        )}
+        {lineIdx < text.split("\n").length - 1 && <br />}
+      </span>
+    );
+  });
 }
 
-const typeColors: Record<string, string> = {
-  intro: "#4f86f7",
-  rule: "#f7a44f",
-  example: "#4fc97a",
-  practice: "#c94fbe",
-  summary: "#f75f5f",
+const typeConfig: Record<string, { color: string; label: string }> = {
+  walt:     { color: "#4f86f7", label: "WALT" },
+  success:  { color: "#10b981", label: "SUCCESS CRITERIA" },
+  learn:    { color: "#f7a44f", label: "LEARNING" },
+  practice: { color: "#c94fbe", label: "PRACTICE" },
+  apply:    { color: "#ef4444", label: "APPLY IT" },
+  recap:    { color: "#64748b", label: "RECAP" },
+  evaluate: { color: "#f59e0b", label: "EVALUATION" },
+  think:    { color: "#06b6d4", label: "THINK" },
 };
 
 export default function SlideView({ slide, current, total, onPrev, onNext }: SlideViewProps) {
-  const color = typeColors[slide.content.type] ?? "#4f86f7";
+  const config = typeConfig[slide.content.type] ?? { color: "#4f86f7", label: slide.content.type.toUpperCase() };
 
   return (
     <div className="slide-view">
-      <div className="slide-card" style={{ borderTop: `6px solid ${color}` }}>
-        <div className="slide-type-badge" style={{ backgroundColor: color }}>
-          {slide.content.type.toUpperCase()}
+      <div className="slide-card" style={{ borderTop: `6px solid ${config.color}` }}>
+        <div className="slide-type-badge" style={{ backgroundColor: config.color }}>
+          {config.label}
         </div>
 
         <h1 className="slide-title">{slide.title}</h1>

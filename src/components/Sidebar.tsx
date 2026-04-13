@@ -2,12 +2,14 @@ import { useState } from "react";
 import type { Slide } from "../slides";
 
 interface SidebarProps {
+  lessonTitle: string;
   slides: Slide[];
   currentIndex: number;
   onSelect: (index: number) => void;
+  onBack: () => void;
 }
 
-export default function Sidebar({ slides, currentIndex, onSelect }: SidebarProps) {
+export default function Sidebar({ lessonTitle, slides, currentIndex, onSelect, onBack }: SidebarProps) {
   const [open, setOpen] = useState(true);
 
   return (
@@ -18,7 +20,10 @@ export default function Sidebar({ slides, currentIndex, onSelect }: SidebarProps
 
       {open && (
         <div className="slide-list">
-          <h3 className="sidebar-title">Slides</h3>
+          <button className="back-btn" onClick={onBack}>
+            ← All Lessons
+          </button>
+          <h3 className="sidebar-title">{lessonTitle}</h3>
           {slides.map((slide, index) => (
             <button
               key={slide.id}
