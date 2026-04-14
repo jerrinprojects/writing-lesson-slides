@@ -1,13 +1,22 @@
-import type { Category, Lesson } from "../slides";
+import type { Category, Lesson, WritingSheet } from "../slides";
 
 interface CategoryPageProps {
   category: Category;
   lessons: Lesson[];
-  onSelect: (lessonId: string) => void;
+  sheets: WritingSheet[];
+  onSelectLesson: (id: string) => void;
+  onSelectSheet: (id: string) => void;
   onBack: () => void;
 }
 
-export default function CategoryPage({ category, lessons, onSelect, onBack }: CategoryPageProps) {
+export default function CategoryPage({
+  category,
+  lessons,
+  sheets,
+  onSelectLesson,
+  onSelectSheet,
+  onBack,
+}: CategoryPageProps) {
   return (
     <div className="home">
       <div className="cat-page-header">
@@ -26,7 +35,7 @@ export default function CategoryPage({ category, lessons, onSelect, onBack }: Ca
             key={lesson.id}
             className="lesson-card"
             style={{ borderTop: `5px solid ${lesson.color}` }}
-            onClick={() => onSelect(lesson.id)}
+            onClick={() => onSelectLesson(lesson.id)}
           >
             <div className="lesson-card-dot" style={{ backgroundColor: lesson.color }} />
             <h2 className="lesson-card-title">{lesson.title}</h2>
@@ -34,6 +43,23 @@ export default function CategoryPage({ category, lessons, onSelect, onBack }: Ca
             <div className="lesson-card-meta">
               <span>{lesson.slides.length} slides</span>
               <span className="lesson-card-arrow" style={{ color: lesson.color }}>Start →</span>
+            </div>
+          </button>
+        ))}
+
+        {sheets.map((sheet) => (
+          <button
+            key={sheet.id}
+            className="lesson-card"
+            style={{ borderTop: `5px solid ${sheet.color}` }}
+            onClick={() => onSelectSheet(sheet.id)}
+          >
+            <div className="lesson-card-dot" style={{ backgroundColor: sheet.color }} />
+            <h2 className="lesson-card-title">{sheet.title}</h2>
+            <p className="lesson-card-desc">{sheet.description}</p>
+            <div className="lesson-card-meta">
+              <span>Instruction Sheet</span>
+              <span className="lesson-card-arrow" style={{ color: sheet.color }}>Open →</span>
             </div>
           </button>
         ))}

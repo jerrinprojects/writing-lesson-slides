@@ -3,21 +3,26 @@ import Sidebar from "./components/Sidebar";
 import SlideView from "./components/SlideView";
 import HomePage from "./components/HomePage";
 import CategoryPage from "./components/CategoryPage";
-import { categories, lessons } from "./slides";
+import InstructionSheet from "./components/InstructionSheet";
+import { categories, lessons, writingSheets } from "./slides";
 import type { Category } from "./slides";
 import "./App.css";
 
-type View = "home" | "category" | "lesson";
+type View = "home" | "category" | "lesson" | "sheet";
 
 export default function App() {
   const [view, setView] = useState<View>("home");
   const [activeCategoryId, setActiveCategoryId] = useState<Category["id"] | null>(null);
   const [activeLessonId, setActiveLessonId] = useState<string | null>(null);
+  const [activeSheetId, setActiveSheetId] = useState<string | null>(null);
   const [current, setCurrent] = useState(0);
 
   const activeCategory = categories.find((c) => c.id === activeCategoryId) ?? null;
   const activeLesson = lessons.find((l) => l.id === activeLessonId) ?? null;
+  const activeSheet = writingSheets.find((s) => s.id === activeSheetId) ?? null;
+
   const categoryLessons = lessons.filter((l) => l.category === activeCategoryId);
+  const categorySheets = writingSheets.filter((s) => s.category === activeCategoryId);
 
   const openCategory = (id: Category["id"]) => {
     setActiveCategoryId(id);
@@ -30,14 +35,21 @@ export default function App() {
     setView("lesson");
   };
 
+  const openSheet = (id: string) => {
+    setActiveSheetId(id);
+    setView("sheet");
+  };
+
   const goCategory = () => {
     setActiveLessonId(null);
+    setActiveSheetId(null);
     setCurrent(0);
     setView("category");
   };
 
   const goHome = () => {
     setActiveLessonId(null);
+    setActiveSheetId(null);
     setActiveCategoryId(null);
     setCurrent(0);
     setView("home");
@@ -79,10 +91,16 @@ export default function App() {
       <CategoryPage
         category={activeCategory}
         lessons={categoryLessons}
-        onSelect={openLesson}
+        sheets={categorySheets}
+        onSelectLesson={openLesson}
+        onSelectSheet={openSheet}
         onBack={goHome}
       />
     );
+  }
+
+  if (view === "sheet" && activeSheet) {
+    return <InstructionSheet sheet={activeSheet} onBack={goCategory} />;
   }
 
   if (view === "lesson" && activeLesson) {

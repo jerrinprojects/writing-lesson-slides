@@ -1,25 +1,4 @@
-export interface Slide {
-  id: number;
-  title: string;
-  summary: string;
-  content: SlideContent;
-}
-
-export interface SlideContent {
-  type: "walt" | "success" | "learn" | "practice" | "apply" | "recap" | "evaluate" | "think";
-  body: string;
-  examples?: string[];
-  tip?: string;
-}
-
-export interface Lesson {
-  id: string;
-  category: "writing-lessons" | "writing-of-the-week";
-  title: string;
-  description: string;
-  color: string;
-  slides: Slide[];
-}
+// ─── Shared ──────────────────────────────────────────────────────────────────
 
 export interface Category {
   id: "writing-lessons" | "writing-of-the-week";
@@ -46,8 +25,55 @@ export const categories: Category[] = [
   },
 ];
 
+// ─── Writing Lessons (slide format) ──────────────────────────────────────────
+
+export interface Slide {
+  id: number;
+  title: string;
+  summary: string;
+  content: SlideContent;
+}
+
+export interface SlideContent {
+  type: "walt" | "success" | "learn" | "practice" | "apply" | "recap" | "evaluate" | "think";
+  body: string;
+  examples?: string[];
+  tip?: string;
+}
+
+export interface Lesson {
+  id: string;
+  category: "writing-lessons";
+  title: string;
+  description: string;
+  color: string;
+  slides: Slide[];
+}
+
+// ─── Writing of the Week (instruction sheet format) ──────────────────────────
+
+export interface WritingSheet {
+  id: string;
+  category: "writing-of-the-week";
+  title: string;
+  description: string;
+  color: string;
+  walt: string;
+  instructions: string[];       // Teacher voice, numbered steps
+  sentenceStarters: string[];
+  wordBank: string[];
+  examples: SheetExample[];     // Shown on page 2
+}
+
+export interface SheetExample {
+  label: string;   // e.g. "Example Script"
+  text: string;    // The actual example text (use \n for line breaks)
+  note?: string;   // Optional annotation / teacher comment
+}
+
+// ─── Data ────────────────────────────────────────────────────────────────────
+
 export const lessons: Lesson[] = [
-  // ─── Writing Lessons ─────────────────────────────────────────────
   {
     id: "full-stop",
     category: "writing-lessons",
@@ -192,151 +218,51 @@ export const lessons: Lesson[] = [
       },
     ],
   },
+];
 
-  // ─── Writing of the Week ─────────────────────────────────────────
+export const writingSheets: WritingSheet[] = [
   {
     id: "script-writing",
     category: "writing-of-the-week",
     title: "Script Writing",
-    description: "Explore how to write a script for a play or short scene.",
+    description: "Write a short script for a play or scene using correct layout.",
     color: "#10b981",
-    slides: [
+    walt: "We Are Learning To write a script for a play or short scene.",
+    instructions: [
+      "Think of two characters. Who are they? Where are they? What are they talking about?",
+      "Write each character's name in CAPITAL LETTERS, followed by a colon ( : ).",
+      "Write what your character says right after their name. Do not use speech marks in a script.",
+      "Add stage directions to show how a character moves, feels, or speaks. Put them in brackets like this: (nervously) or (walking to the door).",
+      "Write at least 6 lines of dialogue. Make it sound like a real conversation — short and natural.",
+      "Add at least 2 stage directions anywhere in your script.",
+      "Read your script back. Does it make sense? Does it sound like something people would really say?",
+    ],
+    sentenceStarters: [
+      "(looking worried) ...",
+      "(quietly) ...",
+      "(turning around) ...",
+      "I think we should ...",
+      "But what about ...",
+      "That is not fair because ...",
+      "Wait, I have an idea ...",
+      "Are you sure that ...",
+    ],
+    wordBank: [
+      "nervously", "quietly", "loudly", "sadly", "excitedly",
+      "angrily", "carefully", "suddenly", "whispers", "shouts",
+      "argues", "suggests", "agrees", "disagrees", "replies",
+      "sighs", "laughs", "pauses", "nods", "exits",
+    ],
+    examples: [
       {
-        id: 1,
-        title: "WALT",
-        summary: "What we are learning",
-        content: {
-          type: "walt",
-          body: "We Are Learning To write a script for a play or short scene.",
-        },
+        label: "Example Script",
+        text: "SAM:  (looking out of the window)  It is raining again.\nLILY:  We cannot go to the park then.\nSAM:  (turning around)  We could play a board game instead.\nLILY:  But we played that yesterday. Can we do something different?\nSAM:  (sitting down)  How about we make something? Like a den?\nLILY:  (excitedly)  Yes! Let us use the sofa cushions.",
+        note: "Notice: character names are in CAPITALS, stage directions are in brackets, and there are no speech marks.",
       },
       {
-        id: 2,
-        title: "Success Criteria",
-        summary: "I can...",
-        content: {
-          type: "success",
-          body: "By the end of this lesson, you will be able to:",
-          examples: [
-            "I can explain what a script is and when it is used.",
-            "I can set out a script correctly with character names and stage directions.",
-            "I can write dialogue that sounds like a real conversation.",
-          ],
-        },
-      },
-      {
-        id: 3,
-        title: "What is a Script?",
-        summary: "Explanation and examples",
-        content: {
-          type: "learn",
-          body: "A script is a piece of writing for a play, film, or TV show. Instead of telling a story, it shows what characters say and do.\n\nA script has three main parts:",
-          examples: [
-            "Character name — who is speaking (written in capital letters)",
-            "Dialogue — what the character says",
-            "Stage directions — what the character does (written in brackets)",
-          ],
-          tip: "Scripts do not use speech marks. The character name tells you who is speaking.",
-        },
-      },
-      {
-        id: 4,
-        title: "Practice 1 — Read the Script",
-        summary: "Practice 1: read and identify",
-        content: {
-          type: "practice",
-          body: "Read the script below. Find the character name, the dialogue, and the stage direction.",
-          examples: [
-            "SAM:  (looking out of the window)  It is raining again.",
-            "LILY:  We cannot go to the park then.",
-            "SAM:  (turning around)  We could play a board game instead.",
-            "LILY:  Great idea!",
-          ],
-          tip: "Can you spot the stage directions? They are always in brackets.",
-        },
-      },
-      {
-        id: 5,
-        title: "Practice 2 — Fix the Layout",
-        summary: "Practice 2: fix the script layout",
-        content: {
-          type: "practice",
-          body: "This script has layout mistakes. How would you fix each line?",
-          examples: [
-            "1.  tom said he was hungry.",
-            "2.  (Anna walks in) Anna: hello everyone",
-            "3.  MUM: where have you been? she looked worried.",
-            "4.  BEN sits down. I am so tired.",
-          ],
-          tip: "Character names go in CAPITALS. Stage directions go in (brackets). No speech marks needed.",
-        },
-      },
-      {
-        id: 6,
-        title: "Practice 3 — Continue the Script",
-        summary: "Practice 3: write the next lines",
-        content: {
-          type: "practice",
-          body: "Read the start of this script. Write the next 3 to 4 lines to continue it.",
-          examples: [
-            "TEACHER:  (standing at the board)  Right, class. Today we have a surprise.",
-            "ALEX:  What kind of surprise?",
-            "TEACHER:  We are going on a trip to the science museum.",
-            "ALEX:  (to the person next to them)  ...",
-          ],
-          tip: "Think about how the characters feel. Use a stage direction to show it.",
-        },
-      },
-      {
-        id: 7,
-        title: "Apply It!",
-        summary: "Independent writing activity",
-        content: {
-          type: "apply",
-          body: "Write a short script about two friends who disagree about what to do after school.\n\nYour script must have:\n- At least 2 characters\n- At least 6 lines of dialogue\n- At least 2 stage directions\n\nYou have 5 to 10 minutes. Go!",
-          tip: "Give your characters names and think about how they speak. Do they use short sentences or long ones?",
-        },
-      },
-      {
-        id: 8,
-        title: "What Did We Learn?",
-        summary: "Recap",
-        content: {
-          type: "recap",
-          body: "Let's remember what we covered today:",
-          examples: [
-            "A script is writing for a play, film, or TV show.",
-            "Character names are written in CAPITAL LETTERS.",
-            "Stage directions are written in (brackets).",
-            "Scripts do not use speech marks.",
-            "Dialogue should sound like a natural conversation.",
-          ],
-        },
-      },
-      {
-        id: 9,
-        title: "So... Can You?",
-        summary: "Evaluation",
-        content: {
-          type: "evaluate",
-          body: "Let's check what you have learned. Give yourself a score:",
-          examples: [
-            "Can you explain what a script is?",
-            "Can you set out a script with character names and stage directions?",
-            "Can you write dialogue that sounds like a real conversation?",
-          ],
-          tip: "Be honest with yourself — it helps you know what to practise next.",
-        },
-      },
-      {
-        id: 10,
-        title: "Think About It...",
-        summary: "Thinking question",
-        content: {
-          type: "think",
-          body: "How is writing a script different from writing a story?\n\nThink about:\n- What does a script leave out that a story includes?\n- What does a script show that a story does not?",
-          tip: "There is no right or wrong answer. Just think and share your ideas.",
-        },
+        label: "What a Good Script Looks Like",
+        text: "CHARACTER NAME:  (stage direction)  Dialogue goes here.\nOTHER CHARACTER:  Their reply goes here.\nCHARACTER NAME:  (another stage direction)  More dialogue.",
+        note: "Use this layout every time. Character name first, then the colon, then what they say.",
       },
     ],
   },

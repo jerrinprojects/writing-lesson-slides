@@ -516,3 +516,308 @@ body {
 
 /* Hide mobile topbar on non-mobile */
 .mobile-topbar { display: none; }
+
+/* ═══════════════════════════════
+   INSTRUCTION SHEET
+═══════════════════════════════ */
+.sheet-wrapper {
+  background: #e8edf2;
+  min-height: 100vh;
+  padding: 24px 24px 48px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* Screen toolbar */
+.sheet-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 860px;
+  margin: 0 auto 20px;
+}
+
+.sheet-back-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 1.5px solid #cbd5e1;
+  background: white;
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.sheet-back-btn:hover { background: #f1f5f9; }
+
+.sheet-print-btn {
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  background: #1e2a3a;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.sheet-print-btn:hover { background: #2d3f55; }
+
+/* A4-ish page */
+.sheet-page {
+  background: white;
+  max-width: 860px;
+  margin: 0 auto 32px;
+  border-radius: 12px;
+  padding: 52px 56px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Header bar */
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 3px solid;
+  padding-bottom: 16px;
+}
+
+.sheet-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sheet-label {
+  display: inline-block;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 3px 12px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.sheet-main-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #1e2a3a;
+  line-height: 1.15;
+}
+
+.sheet-page-num {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* WALT */
+.sheet-walt {
+  border-left: 6px solid;
+  padding: 16px 22px;
+  background: #f8fafc;
+  border-radius: 0 10px 10px 0;
+}
+
+.sheet-walt-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.sheet-walt-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e2a3a;
+  line-height: 1.4;
+}
+
+/* Section */
+.sheet-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sheet-section-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* Instructions */
+.sheet-instructions {
+  list-style: none;
+  counter-reset: steps;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+.sheet-instructions li {
+  counter-increment: steps;
+  display: flex;
+  gap: 14px;
+  font-size: 1.05rem;
+  color: #1e293b;
+  line-height: 1.55;
+}
+
+.sheet-instructions li::before {
+  content: counter(steps);
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1e2a3a;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+/* Two column: starters + word bank */
+.sheet-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.sheet-box {
+  border: 2px solid;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sheet-box-title {
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+}
+
+/* Sentence starters */
+.sheet-starters {
+  list-style: none;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sheet-starters li {
+  font-size: 0.95rem;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+/* Word bank */
+.sheet-wordbank {
+  padding: 14px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sheet-word {
+  border: 1.5px solid;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.9rem;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+/* Writing lines */
+.sheet-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sheet-line {
+  border-bottom: 1.5px solid #d1d5db;
+  height: 38px;
+}
+
+/* Examples */
+.sheet-example-box {
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #f8fafc;
+}
+
+.sheet-example-line {
+  font-size: 1rem;
+  color: #1e293b;
+  line-height: 1.6;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.sheet-example-note {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+  font-style: italic;
+  padding-left: 4px;
+}
+
+/* ═══════════════════════════════
+   PRINT STYLES
+═══════════════════════════════ */
+@media print {
+  body {
+    background: white;
+    overflow: auto;
+  }
+
+  .no-print { display: none !important; }
+
+  .sheet-wrapper {
+    background: white;
+    padding: 0;
+  }
+
+  .sheet-page {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 20mm 18mm;
+    margin: 0;
+    max-width: 100%;
+    page-break-after: always;
+  }
+
+  .sheet-page-break {
+    page-break-before: always;
+  }
+
+  .sheet-line {
+    height: 34px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sheet-page { padding: 28px 20px; }
+  .sheet-main-title { font-size: 1.5rem; }
+  .sheet-walt-text { font-size: 1.2rem; }
+  .sheet-two-col { grid-template-columns: 1fr; }
+  .sheet-instructions li { font-size: 0.95rem; }
+}
