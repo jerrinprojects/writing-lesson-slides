@@ -22,7 +22,6 @@ export default function InstructionSheet({ sheet, onBack }: InstructionSheetProp
       {/* ══════════════ PAGE 1 ══════════════ */}
       <div className="sheet-page">
 
-        {/* Header */}
         <div className="sheet-header" style={{ borderColor: sheet.color }}>
           <div className="sheet-header-left">
             <span className="sheet-label" style={{ backgroundColor: sheet.color }}>
@@ -35,13 +34,11 @@ export default function InstructionSheet({ sheet, onBack }: InstructionSheetProp
           </div>
         </div>
 
-        {/* WALT */}
         <div className="sheet-walt" style={{ borderLeftColor: sheet.color }}>
           <span className="sheet-walt-label" style={{ color: sheet.color }}>WALT</span>
           <p className="sheet-walt-text">{sheet.walt}</p>
         </div>
 
-        {/* Instructions */}
         <div className="sheet-section">
           <h2 className="sheet-section-title" style={{ color: sheet.color }}>
             What to do
@@ -53,7 +50,6 @@ export default function InstructionSheet({ sheet, onBack }: InstructionSheetProp
           </ol>
         </div>
 
-        {/* Sentence Starters + Word Bank side by side */}
         <div className="sheet-two-col">
           <div className="sheet-box" style={{ borderColor: sheet.color }}>
             <h3 className="sheet-box-title" style={{ backgroundColor: sheet.color }}>
@@ -77,18 +73,6 @@ export default function InstructionSheet({ sheet, onBack }: InstructionSheetProp
                 </span>
               ))}
             </div>
-          </div>
-        </div>
-
-        {/* Writing lines */}
-        <div className="sheet-section">
-          <h2 className="sheet-section-title" style={{ color: sheet.color }}>
-            Your Writing
-          </h2>
-          <div className="sheet-lines">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} className="sheet-line" />
-            ))}
           </div>
         </div>
 
@@ -124,18 +108,6 @@ export default function InstructionSheet({ sheet, onBack }: InstructionSheetProp
             )}
           </div>
         ))}
-
-        {/* Extra lines for page 2 */}
-        <div className="sheet-section">
-          <h2 className="sheet-section-title" style={{ color: sheet.color }}>
-            Continue Your Writing
-          </h2>
-          <div className="sheet-lines">
-            {Array.from({ length: 14 }).map((_, i) => (
-              <div key={i} className="sheet-line" />
-            ))}
-          </div>
-        </div>
 
       </div>
     </div>

@@ -742,18 +742,6 @@ body {
   font-weight: 500;
 }
 
-/* Writing lines */
-.sheet-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.sheet-line {
-  border-bottom: 1.5px solid #d1d5db;
-  height: 38px;
-}
-
 /* Examples */
 .sheet-example-box {
   border: 2px solid;
@@ -809,9 +797,6 @@ body {
     page-break-before: always;
   }
 
-  .sheet-line {
-    height: 34px;
-  }
 }
 
 @media (max-width: 600px) {
