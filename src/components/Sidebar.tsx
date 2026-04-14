@@ -10,32 +10,51 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ lessonTitle, slides, currentIndex, onSelect, onBack }: SidebarProps) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
+
+  const handleSelect = (index: number) => {
+    onSelect(index);
+    setOpen(false); // close sidebar after selecting on mobile
+  };
 
   return (
-    <div className={`sidebar ${open ? "open" : "closed"}`}>
-      <button className="toggle-btn" onClick={() => setOpen(!open)} title={open ? "Close sidebar" : "Open sidebar"}>
-        {open ? "◀" : "▶"}
-      </button>
-
+    <>
+      {/* Dark overlay when open on mobile */}
       {open && (
-        <div className="slide-list">
-          <button className="back-btn" onClick={onBack}>
-            ← All Lessons
-          </button>
-          <h3 className="sidebar-title">{lessonTitle}</h3>
-          {slides.map((slide, index) => (
-            <button
-              key={slide.id}
-              className={`slide-item ${index === currentIndex ? "active" : ""}`}
-              onClick={() => onSelect(index)}
-            >
-              <span className="slide-num">{index + 1}</span>
-              <span className="slide-summary">{slide.summary}</span>
-            </button>
-          ))}
-        </div>
+        <div
+          className="sidebar-overlay"
+          onClick={() => setOpen(false)}
+        />
       )}
-    </div>
+
+      <div className={`sidebar ${open ? "open" : "closed"}`}>
+        <button
+          className="toggle-btn"
+          onClick={() => setOpen(!open)}
+          title={open ? "Close menu" : "Open menu"}
+        >
+          {open ? "◀" : "▶"}
+        </button>
+
+        {open && (
+          <div className="slide-list">
+            <button className="back-btn" onClick={onBack}>
+              ← All Lessons
+            </button>
+            <h3 className="sidebar-title">{lessonTitle}</h3>
+            {slides.map((slide, index) => (
+              <button
+                key={slide.id}
+                className={`slide-item ${index === currentIndex ? "active" : ""}`}
+                onClick={() => handleSelect(index)}
+              >
+                <span className="slide-num">{index + 1}</span>
+                <span className="slide-summary">{slide.summary}</span>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </>
   );
 }
