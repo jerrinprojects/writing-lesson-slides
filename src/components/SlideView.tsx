@@ -47,19 +47,22 @@ const typeConfig: Record<string, { color: string; label: string }> = {
 export default function SlideView({ slide, current, total, lessonTitle, onPrev, onNext, onBack }: SlideViewProps) {
   const config = typeConfig[slide.content.type] ?? { color: "#4f86f7", label: "" };
   const isDiscussion = slide.content.type === "discussion";
-  const [activeLang, setActiveLang] = useState<LangKey | null>(null);
+  const [activeLangs, setActiveLangs] = useState<Set<LangKey>>(new Set());
 
-  // Reset language when slide changes
+  // Reset languages when slide changes
   useEffect(() => {
-    setActiveLang(null);
+    setActiveLangs(new Set());
   }, [current]);
 
   const translations = slide.content.translations;
-  const activeTranslation = activeLang ? translations?.[activeLang] : null;
   const hasTranslations = translations && (translations.zh || translations.vi);
 
   const toggleLang = (lang: LangKey) => {
-    setActiveLang((prev) => (prev === lang ? null : lang));
+    setActiveLangs((prev) => {
+      const next = new Set(prev);
+      next.has(lang) ? next.delete(lang) : next.add(lang);
+      return next;
+    });
   };
 
   return (
@@ -81,20 +84,28 @@ export default function SlideView({ slide, current, total, lessonTitle, onPrev, 
 
           <p className="discussion-question">{renderBody(slide.content.body)}</p>
 
-          {/* Translation */}
-          {activeTranslation && (
-            <p className="discussion-translation">{renderBody(activeTranslation.body)}</p>
-          )}
+          {/* Translations — each active language stacks below */}
+          {(["zh", "vi"] as LangKey[]).map((lang) => {
+            const t = translations?.[lang];
+            if (!t || !activeLangs.has(lang)) return null;
+            return (
+              <p key={lang} className="discussion-translation">
+                {renderBody(t.body)}
+              </p>
+            );
+          })}
 
-          {/* Tip */}
-          {(slide.content.tip || activeTranslation?.tip) && (
+          {/* Tip row: English + any active translated tips */}
+          {(slide.content.tip || (["zh", "vi"] as LangKey[]).some((l) => activeLangs.has(l) && translations?.[l]?.tip)) && (
             <div className="discussion-tip-row">
               {slide.content.tip && (
                 <p className="discussion-tip">{slide.content.tip}</p>
               )}
-              {activeTranslation?.tip && (
-                <p className="discussion-tip discussion-tip--translated">{activeTranslation.tip}</p>
-              )}
+              {(["zh", "vi"] as LangKey[]).map((lang) => {
+                const tip = translations?.[lang]?.tip;
+                if (!tip || !activeLangs.has(lang)) return null;
+                return <p key={lang} className="discussion-tip discussion-tip--translated">{tip}</p>;
+              })}
             </div>
           )}
 
@@ -105,8 +116,8 @@ export default function SlideView({ slide, current, total, lessonTitle, onPrev, 
                 translations?.[lang] ? (
                   <button
                     key={lang}
-                    className={`lang-btn ${activeLang === lang ? "active" : ""}`}
-                    style={activeLang === lang ? { backgroundColor: config.color, borderColor: config.color } : { borderColor: config.color, color: config.color }}
+                    className={`lang-btn ${activeLangs.has(lang) ? "active" : ""}`}
+                    style={activeLangs.has(lang) ? { backgroundColor: config.color, borderColor: config.color } : { borderColor: config.color, color: config.color }}
                     onClick={() => toggleLang(lang)}
                   >
                     {LANG_LABELS[lang]}
