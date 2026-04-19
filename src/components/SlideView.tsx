@@ -25,21 +25,23 @@ function renderBody(text: string) {
 }
 
 const typeConfig: Record<string, { color: string; label: string }> = {
-  walt:     { color: "#4f86f7", label: "WALT" },
-  success:  { color: "#10b981", label: "SUCCESS CRITERIA" },
-  learn:    { color: "#f7a44f", label: "LEARNING" },
-  practice: { color: "#c94fbe", label: "PRACTICE" },
-  apply:    { color: "#ef4444", label: "APPLY IT" },
-  recap:    { color: "#64748b", label: "RECAP" },
-  evaluate: { color: "#f59e0b", label: "EVALUATION" },
-  think:    { color: "#06b6d4", label: "THINK" },
+  walt:       { color: "#4f86f7", label: "WALT" },
+  success:    { color: "#10b981", label: "SUCCESS CRITERIA" },
+  learn:      { color: "#f7a44f", label: "LEARNING" },
+  practice:   { color: "#c94fbe", label: "PRACTICE" },
+  apply:      { color: "#ef4444", label: "APPLY IT" },
+  recap:      { color: "#64748b", label: "RECAP" },
+  evaluate:   { color: "#f59e0b", label: "EVALUATION" },
+  think:      { color: "#06b6d4", label: "THINK" },
+  discussion: { color: "#8b5cf6", label: "" },
 };
 
 export default function SlideView({ slide, current, total, lessonTitle, onPrev, onNext, onBack }: SlideViewProps) {
-  const config = typeConfig[slide.content.type] ?? { color: "#4f86f7", label: slide.content.type.toUpperCase() };
+  const config = typeConfig[slide.content.type] ?? { color: "#4f86f7", label: "" };
+  const isDiscussion = slide.content.type === "discussion";
 
   return (
-    <div className="slide-view">
+    <div className={`slide-view ${isDiscussion ? "slide-view--discussion" : ""}`}>
       {/* Mobile only: top bar with back button */}
       <div className="mobile-topbar">
         <button className="back-btn" onClick={onBack}>
@@ -48,30 +50,46 @@ export default function SlideView({ slide, current, total, lessonTitle, onPrev, 
         <span style={{ fontSize: "0.9rem", color: "#64748b", fontWeight: 600 }}>{lessonTitle}</span>
       </div>
 
-      <div className="slide-card" style={{ borderTop: `6px solid ${config.color}` }}>
-        <div className="slide-type-badge" style={{ backgroundColor: config.color }}>
-          {config.label}
+      {isDiscussion ? (
+        // ── Discussion slide: centred, big question ──
+        <div className="discussion-card" style={{ borderTop: `6px solid ${config.color}` }}>
+          <span className="discussion-section" style={{ color: config.color }}>
+            {slide.title}
+          </span>
+          <p className="discussion-question">{renderBody(slide.content.body)}</p>
+          {slide.content.tip && (
+            <p className="discussion-tip">{slide.content.tip}</p>
+          )}
         </div>
+      ) : (
+        // ── Regular slide ──
+        <div className="slide-card" style={{ borderTop: `6px solid ${config.color}` }}>
+          {config.label && (
+            <div className="slide-type-badge" style={{ backgroundColor: config.color }}>
+              {config.label}
+            </div>
+          )}
 
-        <h1 className="slide-title">{slide.title}</h1>
+          <h1 className="slide-title">{slide.title}</h1>
 
-        <p className="slide-body">{renderBody(slide.content.body)}</p>
+          <p className="slide-body">{renderBody(slide.content.body)}</p>
 
-        {slide.content.examples && slide.content.examples.length > 0 && (
-          <ul className="slide-examples">
-            {slide.content.examples.map((ex, i) => (
-              <li key={i}>{ex}</li>
-            ))}
-          </ul>
-        )}
+          {slide.content.examples && slide.content.examples.length > 0 && (
+            <ul className="slide-examples">
+              {slide.content.examples.map((ex, i) => (
+                <li key={i}>{ex}</li>
+              ))}
+            </ul>
+          )}
 
-        {slide.content.tip && (
-          <div className="slide-tip">
-            <span className="tip-label">Tip:</span>
-            <span>{slide.content.tip}</span>
-          </div>
-        )}
-      </div>
+          {slide.content.tip && (
+            <div className="slide-tip">
+              <span className="tip-label">Tip:</span>
+              <span>{slide.content.tip}</span>
+            </div>
+          )}
+        </div>
+      )}
 
       <div className="nav-bar">
         <button className="nav-btn" onClick={onPrev} disabled={current === 0}>

@@ -1,7 +1,7 @@
 // ─── Shared ──────────────────────────────────────────────────────────────────
 
 export interface Category {
-  id: "writing-lessons" | "writing-of-the-week";
+  id: "writing-lessons" | "writing-of-the-week" | "group-discussion";
   title: string;
   description: string;
   color: string;
@@ -23,6 +23,13 @@ export const categories: Category[] = [
     color: "#10b981",
     icon: "W",
   },
+  {
+    id: "group-discussion",
+    title: "Group Discussion",
+    description: "Discussion questions to get students talking and thinking together.",
+    color: "#8b5cf6",
+    icon: "D",
+  },
 ];
 
 // ─── Writing Lessons (slide format) ──────────────────────────────────────────
@@ -35,7 +42,7 @@ export interface Slide {
 }
 
 export interface SlideContent {
-  type: "walt" | "success" | "learn" | "practice" | "apply" | "recap" | "evaluate" | "think";
+  type: "walt" | "success" | "learn" | "practice" | "apply" | "recap" | "evaluate" | "think" | "discussion";
   body: string;
   examples?: string[];
   tip?: string;
@@ -43,7 +50,7 @@ export interface SlideContent {
 
 export interface Lesson {
   id: string;
-  category: "writing-lessons";
+  category: "writing-lessons" | "group-discussion";
   title: string;
   description: string;
   color: string;
@@ -214,6 +221,102 @@ export const lessons: Lesson[] = [
           type: "think",
           body: "What do you think would happen if we stopped using full stops in writing?\n\nTry reading this:\n\n\"I went to school I saw my friend we played a game it was so fun I want to do it again tomorrow\"",
           tip: "How does it feel to read? Why do full stops matter?",
+        },
+      },
+    ],
+  },
+
+  // ─── Group Discussion ─────────────────────────────────────────────
+  {
+    id: "t2-day1",
+    category: "group-discussion",
+    title: "T2 Day 1",
+    description: "Discussion questions to kick off Term 2 — reconnect, big questions, and goal setting.",
+    color: "#8b5cf6",
+    slides: [
+      {
+        id: 1,
+        title: "Reconnect",
+        summary: "Holiday highlight in 3 words",
+        content: {
+          type: "discussion",
+          body: "Holiday highlight in exactly 3 words — go!",
+          tip: "Share with a partner first, then a few to the class.",
+        },
+      },
+      {
+        id: 2,
+        title: "Reconnect",
+        summary: "Rate your holidays",
+        content: {
+          type: "discussion",
+          body: "Rate your holidays 1 to 10 and explain why.",
+          tip: "Quick whole-class sharing.",
+        },
+      },
+      {
+        id: 3,
+        title: "Big Question",
+        summary: "Liked or respected?",
+        content: {
+          type: "discussion",
+          body: "Is it better to be liked or respected?\n\nCan you have both?",
+        },
+      },
+      {
+        id: 4,
+        title: "Big Question",
+        summary: "Change one school rule",
+        content: {
+          type: "discussion",
+          body: "If you could change one rule at school, what would it be — and why?",
+        },
+      },
+      {
+        id: 5,
+        title: "Big Question",
+        summary: "Smartest or kindest?",
+        content: {
+          type: "discussion",
+          body: "Would you rather be the smartest person in the room or the kindest?\n\nWhy?",
+        },
+      },
+      {
+        id: 6,
+        title: "Big Question",
+        summary: "Social media: good or harm?",
+        content: {
+          type: "discussion",
+          body: "Is social media doing more good or more harm for people our age?",
+        },
+      },
+      {
+        id: 7,
+        title: "Big Question",
+        summary: "Students have a say?",
+        content: {
+          type: "discussion",
+          body: "Should students have a say in what they learn at school?",
+        },
+      },
+      {
+        id: 8,
+        title: "Term 2 Goal Setting",
+        summary: "One thing to get better at",
+        content: {
+          type: "discussion",
+          body: "One thing I want to get better at this term.",
+          tip: "Share with a partner first, then share out to the class.",
+        },
+      },
+      {
+        id: 9,
+        title: "Term 2 Goal Setting",
+        summary: "T1 challenge to tackle differently",
+        content: {
+          type: "discussion",
+          body: "What is something that was hard in Term 1 that you want to tackle differently this term?",
+          tip: "Share with a partner first, then share out to the class.",
         },
       },
     ],
