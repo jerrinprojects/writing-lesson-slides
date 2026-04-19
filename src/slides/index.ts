@@ -41,11 +41,20 @@ export interface Slide {
   content: SlideContent;
 }
 
+export interface SlideTranslation {
+  body: string;
+  tip?: string;
+}
+
 export interface SlideContent {
   type: "walt" | "success" | "learn" | "practice" | "apply" | "recap" | "evaluate" | "think" | "discussion";
   body: string;
   examples?: string[];
   tip?: string;
+  translations?: {
+    zh?: SlideTranslation;  // Chinese Simplified
+    vi?: SlideTranslation;  // Vietnamese
+  };
 }
 
 export interface Lesson {
@@ -242,6 +251,10 @@ export const lessons: Lesson[] = [
           type: "discussion",
           body: "Holiday highlight in exactly 3 words — go!",
           tip: "Share with a partner first, then a few to the class.",
+          translations: {
+            zh: { body: "用三个词概括你假期中最难忘的事——开始！", tip: "先和同伴分享，然后再和全班同学分享。" },
+            vi: { body: "Điểm nổi bật của kỳ nghỉ trong đúng 3 từ — bắt đầu!", tip: "Chia sẻ với bạn bên cạnh trước, sau đó chia sẻ với cả lớp." },
+          },
         },
       },
       {
@@ -252,6 +265,10 @@ export const lessons: Lesson[] = [
           type: "discussion",
           body: "Rate your holidays 1 to 10 and explain why.",
           tip: "Quick whole-class sharing.",
+          translations: {
+            zh: { body: "给你的假期打1到10分，并说明原因。", tip: "快速与全班同学分享。" },
+            vi: { body: "Đánh giá kỳ nghỉ của bạn từ 1 đến 10 và giải thích lý do.", tip: "Chia sẻ nhanh với cả lớp." },
+          },
         },
       },
       {
@@ -261,6 +278,10 @@ export const lessons: Lesson[] = [
         content: {
           type: "discussion",
           body: "Is it better to be liked or respected?\n\nCan you have both?",
+          translations: {
+            zh: { body: "被喜欢和被尊重，哪个更重要？\n\n两者可以兼得吗？" },
+            vi: { body: "Được yêu thích hay được tôn trọng thì tốt hơn?\n\nBạn có thể có cả hai không?" },
+          },
         },
       },
       {
@@ -270,6 +291,10 @@ export const lessons: Lesson[] = [
         content: {
           type: "discussion",
           body: "If you could change one rule at school, what would it be — and why?",
+          translations: {
+            zh: { body: "如果你可以改变学校的一条规定，你会改变什么——为什么？" },
+            vi: { body: "Nếu bạn có thể thay đổi một quy tắc ở trường, đó sẽ là gì — và tại sao?" },
+          },
         },
       },
       {
@@ -279,6 +304,10 @@ export const lessons: Lesson[] = [
         content: {
           type: "discussion",
           body: "Would you rather be the smartest person in the room or the kindest?\n\nWhy?",
+          translations: {
+            zh: { body: "你更愿意成为房间里最聪明的人，还是最善良的人？\n\n为什么？" },
+            vi: { body: "Bạn muốn là người thông minh nhất hay tốt bụng nhất trong phòng?\n\nTại sao?" },
+          },
         },
       },
       {
@@ -288,6 +317,10 @@ export const lessons: Lesson[] = [
         content: {
           type: "discussion",
           body: "Is social media doing more good or more harm for people our age?",
+          translations: {
+            zh: { body: "对于我们这个年龄段的人来说，社交媒体是利多还是弊多？" },
+            vi: { body: "Mạng xã hội đang mang lại nhiều lợi ích hay tác hại hơn cho người ở độ tuổi chúng ta?" },
+          },
         },
       },
       {
@@ -297,6 +330,10 @@ export const lessons: Lesson[] = [
         content: {
           type: "discussion",
           body: "Should students have a say in what they learn at school?",
+          translations: {
+            zh: { body: "学生应该对学校的学习内容有发言权吗？" },
+            vi: { body: "Học sinh có nên có tiếng nói trong việc quyết định nội dung học ở trường không?" },
+          },
         },
       },
       {
@@ -307,6 +344,10 @@ export const lessons: Lesson[] = [
           type: "discussion",
           body: "One thing I want to get better at this term.",
           tip: "Share with a partner first, then share out to the class.",
+          translations: {
+            zh: { body: "这学期我想提升的一件事。", tip: "先和同伴分享，然后再向全班分享。" },
+            vi: { body: "Một điều tôi muốn cải thiện trong học kỳ này.", tip: "Chia sẻ với bạn bên cạnh trước, sau đó chia sẻ với cả lớp." },
+          },
         },
       },
       {
@@ -317,6 +358,10 @@ export const lessons: Lesson[] = [
           type: "discussion",
           body: "What is something that was hard in Term 1 that you want to tackle differently this term?",
           tip: "Share with a partner first, then share out to the class.",
+          translations: {
+            zh: { body: "在第一学期，有什么困难是你希望这学期以不同方式来应对的？", tip: "先和同伴分享，然后再向全班分享。" },
+            vi: { body: "Có điều gì khó khăn trong Học kỳ 1 mà bạn muốn giải quyết theo cách khác trong học kỳ này?", tip: "Chia sẻ với bạn bên cạnh trước, sau đó chia sẻ với cả lớp." },
+          },
         },
       },
     ],

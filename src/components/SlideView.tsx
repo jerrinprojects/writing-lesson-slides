@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { Slide } from "../slides";
 
 interface SlideViewProps {
@@ -9,6 +10,13 @@ interface SlideViewProps {
   onNext: () => void;
   onBack: () => void;
 }
+
+type LangKey = "zh" | "vi";
+
+const LANG_LABELS: Record<LangKey, string> = {
+  zh: "中文",
+  vi: "Tiếng Việt",
+};
 
 function renderBody(text: string) {
   return text.split("\n").map((line, lineIdx, arr) => {
@@ -39,6 +47,20 @@ const typeConfig: Record<string, { color: string; label: string }> = {
 export default function SlideView({ slide, current, total, lessonTitle, onPrev, onNext, onBack }: SlideViewProps) {
   const config = typeConfig[slide.content.type] ?? { color: "#4f86f7", label: "" };
   const isDiscussion = slide.content.type === "discussion";
+  const [activeLang, setActiveLang] = useState<LangKey | null>(null);
+
+  // Reset language when slide changes
+  useEffect(() => {
+    setActiveLang(null);
+  }, [current]);
+
+  const translations = slide.content.translations;
+  const activeTranslation = activeLang ? translations?.[activeLang] : null;
+  const hasTranslations = translations && (translations.zh || translations.vi);
+
+  const toggleLang = (lang: LangKey) => {
+    setActiveLang((prev) => (prev === lang ? null : lang));
+  };
 
   return (
     <div className={`slide-view ${isDiscussion ? "slide-view--discussion" : ""}`}>
@@ -56,9 +78,42 @@ export default function SlideView({ slide, current, total, lessonTitle, onPrev, 
           <span className="discussion-section" style={{ color: config.color }}>
             {slide.title}
           </span>
+
           <p className="discussion-question">{renderBody(slide.content.body)}</p>
-          {slide.content.tip && (
-            <p className="discussion-tip">{slide.content.tip}</p>
+
+          {/* Translation */}
+          {activeTranslation && (
+            <p className="discussion-translation">{renderBody(activeTranslation.body)}</p>
+          )}
+
+          {/* Tip */}
+          {(slide.content.tip || activeTranslation?.tip) && (
+            <div className="discussion-tip-row">
+              {slide.content.tip && (
+                <p className="discussion-tip">{slide.content.tip}</p>
+              )}
+              {activeTranslation?.tip && (
+                <p className="discussion-tip discussion-tip--translated">{activeTranslation.tip}</p>
+              )}
+            </div>
+          )}
+
+          {/* Language buttons */}
+          {hasTranslations && (
+            <div className="lang-btns">
+              {(Object.keys(LANG_LABELS) as LangKey[]).map((lang) =>
+                translations?.[lang] ? (
+                  <button
+                    key={lang}
+                    className={`lang-btn ${activeLang === lang ? "active" : ""}`}
+                    style={activeLang === lang ? { backgroundColor: config.color, borderColor: config.color } : { borderColor: config.color, color: config.color }}
+                    onClick={() => toggleLang(lang)}
+                  >
+                    {LANG_LABELS[lang]}
+                  </button>
+                ) : null
+              )}
+            </div>
           )}
         </div>
       ) : (
