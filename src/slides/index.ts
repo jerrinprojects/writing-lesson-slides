@@ -366,6 +366,81 @@ export const lessons: Lesson[] = [
       },
     ],
   },
+
+  {
+    id: "discussion-apr23",
+    category: "group-discussion",
+    title: "Apr 23 Discussion",
+    description: "Five discussion questions on values, school, the world, personal reflection, and hypotheticals.",
+    color: "#8b5cf6",
+    slides: [
+      {
+        id: 1,
+        title: "Values",
+        summary: "Is it ever okay to lie?",
+        content: {
+          type: "discussion",
+          body: "Is it ever okay to lie?\n\nIf yes — when?",
+          translations: {
+            zh: { body: "撒谎有时候是可以的吗？\n\n如果是——什么时候？" },
+            vi: { body: "Có khi nào nói dối là được phép không?\n\nNếu có — khi nào?" },
+          },
+        },
+      },
+      {
+        id: 2,
+        title: "School & Learning",
+        summary: "What is the point of homework?",
+        content: {
+          type: "discussion",
+          body: "What is the point of homework?\n\nIs it actually helping you — or not?",
+          translations: {
+            zh: { body: "做作业的意义是什么？\n\n它真的对你有帮助吗——还是没有？" },
+            vi: { body: "Mục đích của bài tập về nhà là gì?\n\nNó có thực sự giúp ích cho bạn không — hay không?" },
+          },
+        },
+      },
+      {
+        id: 3,
+        title: "Big Picture",
+        summary: "Fix one problem in the world",
+        content: {
+          type: "discussion",
+          body: "If you could fix one problem in the world right now, what would it be — and why?",
+          translations: {
+            zh: { body: "如果你现在能解决世界上的一个问题，那会是什么——为什么？" },
+            vi: { body: "Nếu bạn có thể giải quyết một vấn đề trên thế giới ngay bây giờ, đó sẽ là gì — và tại sao?" },
+          },
+        },
+      },
+      {
+        id: 4,
+        title: "Personal Reflection",
+        summary: "Something you think differently about now",
+        content: {
+          type: "discussion",
+          body: "What is something you believed a year ago that you think differently about now?",
+          translations: {
+            zh: { body: "一年前你相信的某件事，现在你的想法是否已经改变了？" },
+            vi: { body: "Có điều gì bạn tin tưởng một năm trước mà bây giờ bạn nghĩ khác đi không?" },
+          },
+        },
+      },
+      {
+        id: 5,
+        title: "Hypothetical",
+        summary: "Swap lives with anyone for a week",
+        content: {
+          type: "discussion",
+          body: "If you could swap lives with anyone for one week — real or fictional — who would it be and why?",
+          translations: {
+            zh: { body: "如果你可以和任何人交换一周的生活——真实的或虚构的——你会选谁？为什么？" },
+            vi: { body: "Nếu bạn có thể hoán đổi cuộc sống với bất kỳ ai trong một tuần — thật hay hư cấu — đó sẽ là ai và tại sao?" },
+          },
+        },
+      },
+    ],
+  },
 ];
 
 export const writingSheets: WritingSheet[] = [
