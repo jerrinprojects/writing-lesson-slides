@@ -4,7 +4,7 @@ import SlideView from "./components/SlideView";
 import HomePage from "./components/HomePage";
 import CategoryPage from "./components/CategoryPage";
 import InstructionSheet from "./components/InstructionSheet";
-import { categories, lessons, writingSheets, inquiryLessons } from "./slides";
+import { categories, lessons, writingSheets } from "./slides";
 import type { Category } from "./slides";
 import "./App.css";
 
@@ -18,11 +18,10 @@ export default function App() {
   const [current, setCurrent] = useState(0);
 
   const activeCategory = categories.find((c) => c.id === activeCategoryId) ?? null;
-  const allLessons = [...lessons, ...inquiryLessons];
-  const activeLesson = allLessons.find((l) => l.id === activeLessonId) ?? null;
+  const activeLesson = lessons.find((l) => l.id === activeLessonId) ?? null;
   const activeSheet = writingSheets.find((s) => s.id === activeSheetId) ?? null;
 
-  const categoryLessons = allLessons.filter((l) => l.category === activeCategoryId);
+  const categoryLessons = lessons.filter((l) => l.category === activeCategoryId);
   const categorySheets = writingSheets.filter((s) => s.category === activeCategoryId);
 
   const openCategory = (id: Category["id"]) => {
