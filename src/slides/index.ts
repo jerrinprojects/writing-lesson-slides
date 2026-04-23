@@ -471,6 +471,16 @@ export const inquiryLessons: Lesson[] = [
           type: "hook",
           body: "Your teacher is about to play a short clip from a real podcast.\n\nWhile you listen, think:\n\nWhat do you notice? How does it make you feel? What makes you want to keep listening?",
           tip: "Podcasts like Brains On! and But Why reach millions of listeners every week — made by real teams, just like yours will be.",
+          translations: {
+            zh: {
+              body: "你的老师即将播放一段真实播客的短片。\n\n在你聆听的时候，思考：\n\n你注意到了什么？它让你有什么感受？是什么让你想继续听下去？",
+              tip: "《Brains On!》和《But Why》等播客每周吸引数百万听众——由真正的团队制作，就像你们即将组建的团队一样。",
+            },
+            vi: {
+              body: "Giáo viên của bạn sắp phát một đoạn clip ngắn từ một podcast thật.\n\nTrong khi nghe, hãy suy nghĩ:\n\nBạn nhận thấy điều gì? Nó khiến bạn cảm thấy thế nào? Điều gì khiến bạn muốn tiếp tục lắng nghe?",
+              tip: "Các podcast như Brains On! và But Why tiếp cận hàng triệu người nghe mỗi tuần — được tạo ra bởi các nhóm thật sự, giống như nhóm của bạn sắp làm.",
+            },
+          },
         },
       },
       {
@@ -486,6 +496,16 @@ export const inquiryLessons: Lesson[] = [
             "Wow in the World — two hosts explore weird and wonderful science",
           ],
           tip: "Millions of people listen to podcasts while cooking, travelling, or relaxing. Your podcast could reach your classmates — or beyond.",
+          translations: {
+            zh: {
+              body: "播客是一种录制的音频节目——类似于广播节目，但可以随时收听。任何人都可以制作，任何人都可以收听。",
+              tip: "数百万人在烹饪、旅行或休息时收听播客。你们的播客可以让同学们听到——甚至传得更远。",
+            },
+            vi: {
+              body: "Podcast là một chương trình âm thanh được ghi âm — giống như chương trình radio, nhưng có thể nghe theo yêu cầu. Bất kỳ ai cũng có thể tạo và bất kỳ ai cũng có thể nghe.",
+              tip: "Hàng triệu người nghe podcast khi nấu ăn, đi du lịch hoặc thư giãn. Podcast của bạn có thể tiếp cận các bạn cùng lớp — hoặc xa hơn nữa.",
+            },
+          },
         },
       },
       {
@@ -500,6 +520,14 @@ export const inquiryLessons: Lesson[] = [
             "You will research, write, record, and edit your own show",
             "Each episode tells a different part of the story",
           ],
+          translations: {
+            zh: {
+              body: "你们将要创建自己的播客系列，名为**Grown From the Ground（从土地中生长）**。\n\n每组2–3人，共4集加一个试播集。",
+            },
+            vi: {
+              body: "Các bạn sẽ tạo chuỗi podcast của riêng mình có tên là **Grown From the Ground**.\n\n2–3 người mỗi nhóm. 4 tập và một tập thí điểm.",
+            },
+          },
         },
       },
 
@@ -517,6 +545,10 @@ export const inquiryLessons: Lesson[] = [
             "Step 3: Listen to real podcasts",
             "Step 4: Record Episode 0 — your pilot",
           ],
+          translations: {
+            zh: { body: "在录制任何内容之前，你需要组建团队并打造你们的品牌。" },
+            vi: { body: "Trước khi ghi âm bất cứ điều gì, bạn cần xây dựng nhóm và thương hiệu của mình." },
+          },
         },
       },
       {
@@ -532,6 +564,16 @@ export const inquiryLessons: Lesson[] = [
             "Make sure there is enough to research — food, farming, and traditions",
           ],
           tip: "The best choice is one your whole team finds genuinely interesting. Curiosity makes better podcasts.",
+          translations: {
+            zh: {
+              body: "选择一个国家或文化群体作为你们播客的焦点。这将成为整个系列的核心。",
+              tip: "最好的选择是整个团队都真正感兴趣的内容。好奇心能做出更好的播客。",
+            },
+            vi: {
+              body: "Chọn một quốc gia hoặc nhóm văn hóa mà podcast của bạn sẽ tập trung vào. Đây sẽ là trái tim của toàn bộ series.",
+              tip: "Lựa chọn tốt nhất là điều mà cả nhóm đều thực sự thấy thú vị. Sự tò mò tạo ra những podcast hay hơn.",
+            },
+          },
         },
       },
       {
@@ -547,6 +589,10 @@ export const inquiryLessons: Lesson[] = [
             "Can we find enough information — books, websites, people to talk to?",
             "Would this make an interesting story for our listeners?",
           ],
+          translations: {
+            zh: { body: "不确定选哪种文化？作为一个团队讨论这些问题：" },
+            vi: { body: "Không chắc nên chọn văn hóa nào? Hãy thảo luận những câu hỏi này cùng nhóm:" },
+          },
         },
       },
       {
@@ -561,6 +607,10 @@ export const inquiryLessons: Lesson[] = [
             "Podcast name example: Soil and Soul / Seeds and Stories / The Harvest Hour",
             "Write your team name and podcast name at the top of your planning document",
           ],
+          translations: {
+            zh: { body: "团队名称代表你们作为一个团体的身份。播客名称是节目的标题——它应该暗示节目内容。" },
+            vi: { body: "Tên nhóm là danh hiệu của bạn với tư cách là một nhóm. Tên podcast là tiêu đề của chương trình — nó nên gợi lên nội dung của chương trình." },
+          },
         },
       },
       {
@@ -576,6 +626,16 @@ export const inquiryLessons: Lesson[] = [
             "Sounds interesting when you say it out loud",
           ],
           tip: "Say your podcast name out loud. Does it sound like something you would want to listen to?",
+          translations: {
+            zh: {
+              body: "一个好的播客名称能做到三件事：",
+              tip: "大声说出你们的播客名称。听起来像是你会想去收听的节目吗？",
+            },
+            vi: {
+              body: "Một tên podcast hay làm được ba điều:",
+              tip: "Hãy nói tên podcast của bạn to lên. Nghe có vẻ như thứ bạn muốn nghe không?",
+            },
+          },
         },
       },
       {
@@ -590,6 +650,10 @@ export const inquiryLessons: Lesson[] = [
             "But Why — notice how they explain complicated ideas simply",
             "Wow in the World — notice how two hosts talk to each other naturally",
           ],
+          translations: {
+            zh: { body: "在录制自己的播客之前，先听听专业人士是怎么做的。你的老师会播放一段短片。在你聆听的时候，填写你的观察笔记。" },
+            vi: { body: "Trước khi ghi âm podcast của riêng bạn, hãy nghe cách các chuyên gia làm. Giáo viên của bạn sẽ phát một đoạn clip ngắn. Trong khi nghe, hãy điền vào ghi chú quan sát của bạn." },
+          },
         },
       },
       {
@@ -606,6 +670,16 @@ export const inquiryLessons: Lesson[] = [
             "The ending — how do they finish and make you want to come back?",
           ],
           tip: "The best podcasters make it sound like they are talking TO you — not reading AT you.",
+          translations: {
+            zh: {
+              body: "在聆听时，注意这四件事：",
+              tip: "最好的播客主持人让听起来像是在和你交谈——而不是在向你朗读。",
+            },
+            vi: {
+              body: "Khi nghe, hãy chú ý đến bốn điều này:",
+              tip: "Những người làm podcast giỏi nhất làm cho nó nghe như họ đang nói chuyện VỚI bạn — không phải đọc CHO bạn nghe.",
+            },
+          },
         },
       },
       {
@@ -622,6 +696,16 @@ export const inquiryLessons: Lesson[] = [
             "End with: \"In our next episode, we will be talking about...\"",
           ],
           tip: "Your pilot does not need to be perfect. It just needs to be YOU — real, enthusiastic, and clear.",
+          translations: {
+            zh: {
+              body: "你们的试播集是对节目的简短介绍。它告诉听众你们是谁，以及播客内容是什么。",
+              tip: "试播集不需要完美。它只需要是真实的你们——真实、热情、清晰。",
+            },
+            vi: {
+              body: "Tập thí điểm là phần giới thiệu ngắn về chương trình của bạn. Nó cho người nghe biết bạn là ai và podcast của bạn nói về điều gì.",
+              tip: "Tập thí điểm không cần phải hoàn hảo. Nó chỉ cần là bạn — thật sự, nhiệt tình và rõ ràng.",
+            },
+          },
         },
       },
 
@@ -640,6 +724,10 @@ export const inquiryLessons: Lesson[] = [
             "Fun Fact — one surprising thing most people do not know",
             "Outro — \"Thanks for listening. Next time we will cover...\"",
           ],
+          translations: {
+            zh: { body: "播客的每一集都应该遵循相同的基本结构。学好这个——然后每次都使用它。" },
+            vi: { body: "Mỗi tập của podcast nên tuân theo cùng một cấu trúc cơ bản. Học thuộc điều này — rồi sử dụng mỗi lần." },
+          },
         },
       },
       {
@@ -656,6 +744,16 @@ export const inquiryLessons: Lesson[] = [
             "Each team member should have clear lines — no one should be silent",
           ],
           tip: "If it sounds strange when you say it out loud, rewrite it until it sounds natural.",
+          translations: {
+            zh: {
+              body: "逐字写出你计划说的所有内容。然后在录制之前练习大声朗读。",
+              tip: "如果大声说出来听起来很奇怪，就重写它，直到听起来自然为止。",
+            },
+            vi: {
+              body: "Viết ra mọi thứ bạn định nói — từng từ một. Sau đó luyện tập đọc to trước khi ghi âm.",
+              tip: "Nếu nghe có vẻ lạ khi bạn nói to, hãy viết lại cho đến khi nghe tự nhiên.",
+            },
+          },
         },
       },
       {
@@ -672,6 +770,10 @@ export const inquiryLessons: Lesson[] = [
             "Do a 10-second test recording and listen back before the full take",
             "If you make a mistake, pause and start that sentence again — you can edit it later",
           ],
+          translations: {
+            zh: { body: "好的音频质量会产生巨大的差异。每次录制时都遵循这些步骤：" },
+            vi: { body: "Âm thanh tốt tạo ra sự khác biệt lớn. Hãy làm theo các bước này mỗi khi bạn ghi âm:" },
+          },
         },
       },
       {
@@ -688,6 +790,16 @@ export const inquiryLessons: Lesson[] = [
             "Headphones: to listen back and check the quality of your recording",
           ],
           tip: "GarageBand (free on iPad and Mac) lets you record, add music, and edit — all in one place.",
+          translations: {
+            zh: {
+              body: "你们不需要昂贵的设备。以下是可以使用的工具：",
+              tip: "GarageBand（iPad和Mac上免费）让你录音、添加音乐和编辑——全部在一个地方完成。",
+            },
+            vi: {
+              body: "Bạn không cần thiết bị đắt tiền. Đây là những gì cần sử dụng:",
+              tip: "GarageBand (miễn phí trên iPad và Mac) cho phép bạn ghi âm, thêm nhạc và chỉnh sửa — tất cả trong một nơi.",
+            },
+          },
         },
       },
 
@@ -704,6 +816,10 @@ export const inquiryLessons: Lesson[] = [
             "Step 2: Research its history and cultural importance",
             "Step 3: Write and record Episode 1",
           ],
+          translations: {
+            zh: { body: "研究你所选文化中最重要的蔬菜或水果。然后录制第一集。" },
+            vi: { body: "Nghiên cứu loại rau hoặc trái cây quan trọng nhất trong nền văn hóa bạn đã chọn. Sau đó ghi âm Tập 1." },
+          },
         },
       },
       {
@@ -720,6 +836,10 @@ export const inquiryLessons: Lesson[] = [
             "Lebanon → Chickpeas (used in hummus, falafel, and stews)",
             "India → Eggplant — aubergine (used in dozens of traditional dishes)",
           ],
+          translations: {
+            zh: { body: "选择一种在你所选文化中占核心地位的蔬菜或水果——一种在那里已经种植和食用了很长时间的食物。" },
+            vi: { body: "Chọn một loại rau hoặc trái cây là trung tâm của nền văn hóa bạn đã chọn — một thứ đã được trồng và ăn ở đó trong một thời gian dài." },
+          },
         },
       },
       {
@@ -737,6 +857,16 @@ export const inquiryLessons: Lesson[] = [
             "Are there any interesting stories, myths, or legends connected to it?",
           ],
           tip: "Use at least 3 different sources. If two sources disagree, mention it in your podcast — that is great content.",
+          translations: {
+            zh: {
+              body: "使用这些问题来指导你的研究：",
+              tip: "至少使用3个不同的信息来源。如果两个来源意见不一致，在播客中提到这一点——这是很好的内容。",
+            },
+            vi: {
+              body: "Sử dụng những câu hỏi này để hướng dẫn nghiên cứu của bạn:",
+              tip: "Sử dụng ít nhất 3 nguồn khác nhau. Nếu hai nguồn không đồng ý, hãy đề cập đến điều đó trong podcast của bạn — đó là nội dung hay.",
+            },
+          },
         },
       },
       {
@@ -754,6 +884,16 @@ export const inquiryLessons: Lesson[] = [
             "Without corn, Mexican food and culture as we know it would not exist",
           ],
           tip: "Specific numbers, names, and surprising details make a podcast interesting. Vague statements do not.",
+          translations: {
+            zh: {
+              body: "以下是第一集精彩研究内容的示例：",
+              tip: "具体的数字、名称和令人惊讶的细节使播客变得有趣。模糊的陈述则不然。",
+            },
+            vi: {
+              body: "Đây là ví dụ về nghiên cứu mạnh mẽ cho Tập 1:",
+              tip: "Các con số cụ thể, tên gọi và chi tiết bất ngờ làm cho podcast trở nên thú vị. Những câu nói mơ hồ thì không.",
+            },
+          },
         },
       },
       {
@@ -770,6 +910,10 @@ export const inquiryLessons: Lesson[] = [
             "Fun fact: one thing most listeners would not know",
             "Outro: \"Next time, we will explain exactly how this plant grows...\"",
           ],
+          translations: {
+            zh: { body: "在撰写第一集脚本时使用此结构：" },
+            vi: { body: "Sử dụng cấu trúc này khi viết kịch bản Tập 1 của bạn:" },
+          },
         },
       },
       {
@@ -787,6 +931,10 @@ export const inquiryLessons: Lesson[] = [
             "10-second test recording done and listened back",
             "Recording space is quiet",
           ],
+          translations: {
+            zh: { body: "在按下录制键之前检查每一项：" },
+            vi: { body: "Kiểm tra từng mục trước khi nhấn nút ghi âm:" },
+          },
         },
       },
 
@@ -803,6 +951,10 @@ export const inquiryLessons: Lesson[] = [
             "Step 2: Research traditional and modern farming methods",
             "Step 3: Write and record Episode 2",
           ],
+          translations: {
+            zh: { body: "研究你的主食作物的生长条件。然后录制第二集。" },
+            vi: { body: "Nghiên cứu các điều kiện sinh trưởng cho thực phẩm chủ lực của bạn. Sau đó ghi âm Tập 2." },
+          },
         },
       },
       {
@@ -820,6 +972,16 @@ export const inquiryLessons: Lesson[] = [
             "pH level — acidic (below 7), neutral (7), or alkaline (above 7)?",
           ],
           tip: "pH affects what nutrients a plant can absorb from the soil. Most vegetables prefer a pH between 6 and 7.",
+          translations: {
+            zh: {
+              body: "每种植物都有特定的需求。为你的主食作物研究以下五个方面：",
+              tip: "pH值影响植物从土壤中吸收哪些养分。大多数蔬菜偏好pH值在6到7之间。",
+            },
+            vi: {
+              body: "Mỗi loại thực vật đều có các yêu cầu cụ thể. Hãy nghiên cứu cả năm yếu tố cho thực phẩm chủ lực của bạn:",
+              tip: "pH ảnh hưởng đến chất dinh dưỡng mà cây có thể hấp thụ từ đất. Hầu hết các loại rau thích pH từ 6 đến 7.",
+            },
+          },
         },
       },
       {
@@ -836,6 +998,10 @@ export const inquiryLessons: Lesson[] = [
             "How was it traditionally farmed — by hand, with animals, in terraces?",
             "How is it farmed today — by machine, in greenhouses, on large plantations?",
           ],
+          translations: {
+            zh: { body: "使用这些问题来指导你的研究：" },
+            vi: { body: "Sử dụng những câu hỏi này để hướng dẫn nghiên cứu của bạn:" },
+          },
         },
       },
       {
@@ -853,6 +1019,10 @@ export const inquiryLessons: Lesson[] = [
             "Traditionally planted and harvested by hand in terraced hill fields",
             "Some modern farms now use machinery, but many small family farms still use traditional methods",
           ],
+          translations: {
+            zh: { body: "以下是第二集精彩研究内容的示例：" },
+            vi: { body: "Đây là ví dụ về nghiên cứu mạnh mẽ cho Tập 2:" },
+          },
         },
       },
       {
@@ -870,6 +1040,16 @@ export const inquiryLessons: Lesson[] = [
             "Question for your podcast: which approach do you think is better — and why?",
           ],
           tip: "This is a great place to include your team's own opinion. Podcasts are more interesting when hosts share a point of view.",
+          translations: {
+            zh: {
+              body: "在你们的播客中，比较这种食物过去和现在的种植方式：",
+              tip: "这是加入团队自身观点的好地方。当主持人分享自己的观点时，播客会更加有趣。",
+            },
+            vi: {
+              body: "Trong podcast của bạn, hãy so sánh cách thực phẩm này được trồng trong quá khứ và cách trồng ngày nay:",
+              tip: "Đây là nơi tuyệt vời để đưa vào quan điểm của nhóm bạn. Podcast thú vị hơn khi người dẫn chương trình chia sẻ quan điểm.",
+            },
+          },
         },
       },
       {
@@ -886,6 +1066,10 @@ export const inquiryLessons: Lesson[] = [
             "Compare traditional vs modern farming — include your team's opinion",
             "Outro: \"Next episode, we find out what happens after it is harvested...\"",
           ],
+          translations: {
+            zh: { body: "在撰写第二集脚本时使用此结构：" },
+            vi: { body: "Sử dụng cấu trúc này khi viết kịch bản Tập 2 của bạn:" },
+          },
         },
       },
 
@@ -903,6 +1087,10 @@ export const inquiryLessons: Lesson[] = [
             "Step 3: (Optional) Interview someone from that culture",
             "Step 4: Write and record Episode 3",
           ],
+          translations: {
+            zh: { body: "研究你的主食是如何烹饪、食用和庆祝的。然后录制第三集。" },
+            vi: { body: "Nghiên cứu cách thực phẩm chủ lực của bạn được nấu ăn, ăn uống và kỷ niệm. Sau đó ghi âm Tập 3." },
+          },
         },
       },
       {
@@ -919,6 +1107,10 @@ export const inquiryLessons: Lesson[] = [
             "Is there a story, legend, or tradition connected to how it is grown or eaten?",
             "Has its role in the culture changed over time?",
           ],
+          translations: {
+            zh: { body: "使用这些问题来指导你的研究：" },
+            vi: { body: "Sử dụng những câu hỏi này để hướng dẫn nghiên cứu của bạn:" },
+          },
         },
       },
       {
@@ -936,6 +1128,16 @@ export const inquiryLessons: Lesson[] = [
             "Over 200 varieties of kimchi exist — each region has its own recipe",
           ],
           tip: "Cultural meaning is what makes this episode special. Do not just list facts — explain WHY the food matters to real people.",
+          translations: {
+            zh: {
+              body: "以下是第三集精彩研究内容的示例：",
+              tip: "文化意义是这一集特别之处。不要只是列举事实——解释为什么这种食物对真实的人来说很重要。",
+            },
+            vi: {
+              body: "Đây là ví dụ về nghiên cứu mạnh mẽ cho Tập 3:",
+              tip: "Ý nghĩa văn hóa là điều làm cho tập này trở nên đặc biệt. Đừng chỉ liệt kê các sự kiện — hãy giải thích TẠI SAO thực phẩm quan trọng với con người thật sự.",
+            },
+          },
         },
       },
       {
@@ -952,6 +1154,16 @@ export const inquiryLessons: Lesson[] = [
             "Is there a memory or story connected to this food that you would share?",
           ],
           tip: "Record the interview on your phone. Even a 30-second clip in someone's own words makes powerful content.",
+          translations: {
+            zh: {
+              body: "最好的播客包含真实的声音。向来自你所选文化的人提问这些问题：",
+              tip: "用手机录制采访。即使是用某人自己语言说出的30秒短片，也能创造出有力的内容。",
+            },
+            vi: {
+              body: "Những podcast hay nhất bao gồm giọng nói thật. Hãy hỏi ai đó từ nền văn hóa bạn đã chọn những câu hỏi này:",
+              tip: "Ghi âm cuộc phỏng vấn trên điện thoại của bạn. Ngay cả một đoạn 30 giây bằng lời của chính người đó cũng tạo ra nội dung có sức mạnh.",
+            },
+          },
         },
       },
       {
@@ -968,6 +1180,10 @@ export const inquiryLessons: Lesson[] = [
             "Guest segment (if you have an interview): introduce them, play the clip",
             "Fun fact + Outro: \"In our final episode, we bring this all back to our own classroom...\"",
           ],
+          translations: {
+            zh: { body: "在撰写第三集脚本时使用此结构：" },
+            vi: { body: "Sử dụng cấu trúc này khi viết kịch bản Tập 3 của bạn:" },
+          },
         },
       },
 
@@ -986,6 +1202,10 @@ export const inquiryLessons: Lesson[] = [
             "Step 4: Reflect on what you learned across the whole project",
             "Step 5: Write and record Episode 4",
           ],
+          translations: {
+            zh: { body: "将你学到的所有内容与教室花园联系起来。然后录制你们的最后一集。" },
+            vi: { body: "Kết nối mọi thứ bạn đã học với vườn của lớp học. Sau đó ghi âm tập cuối cùng." },
+          },
         },
       },
       {
@@ -1002,6 +1222,10 @@ export const inquiryLessons: Lesson[] = [
             "Space: what is the area and volume of our garden beds?",
             "Water: how often can we water, and how much?",
           ],
+          translations: {
+            zh: { body: "在你判断你的植物是否能在教室花园中生长之前，你需要了解已有的条件：" },
+            vi: { body: "Trước khi bạn có thể nói liệu cây của bạn có thể mọc trong vườn lớp học không, bạn cần biết những điều kiện bạn đã có:" },
+          },
         },
       },
       {
@@ -1018,6 +1242,10 @@ export const inquiryLessons: Lesson[] = [
             "If we cannot grow the exact plant — what similar plant could we grow instead?",
             "What maths could we use to plan the garden? (area, perimeter, volume)",
           ],
+          translations: {
+            zh: { body: "使用这些问题来规划你的建议：" },
+            vi: { body: "Sử dụng những câu hỏi này để lên kế hoạch cho khuyến nghị của bạn:" },
+          },
         },
       },
       {
@@ -1033,6 +1261,16 @@ export const inquiryLessons: Lesson[] = [
             "Maybe — with these specific changes, it could work...",
           ],
           tip: "A good recommendation is not just an opinion — it is an opinion supported by facts you researched yourself.",
+          translations: {
+            zh: {
+              body: "你的建议是整个项目的结论。它应该有来自所有四集的证据支持：",
+              tip: "一个好的建议不仅仅是意见——它是由你自己研究的事实所支持的意见。",
+            },
+            vi: {
+              body: "Khuyến nghị của bạn là kết luận của toàn bộ dự án. Nó nên được hỗ trợ bởi bằng chứng từ cả bốn tập:",
+              tip: "Một khuyến nghị tốt không chỉ là ý kiến — đó là ý kiến được hỗ trợ bởi các sự kiện bạn tự nghiên cứu.",
+            },
+          },
         },
       },
       {
@@ -1050,6 +1288,10 @@ export const inquiryLessons: Lesson[] = [
             "Reflection: what was the most surprising thing you discovered in this project?",
             "Final outro: thank your listeners and wrap up the whole series",
           ],
+          translations: {
+            zh: { body: "在撰写最终一集脚本时使用此结构：" },
+            vi: { body: "Sử dụng cấu trúc này khi viết kịch bản tập cuối cùng của bạn:" },
+          },
         },
       },
       {
@@ -1069,6 +1311,10 @@ export const inquiryLessons: Lesson[] = [
             "All team members contributed equally",
             "Ready to share with the class",
           ],
+          translations: {
+            zh: { body: "在提交播客系列之前，确保每一集都已完成：" },
+            vi: { body: "Trước khi nộp chuỗi podcast của bạn, hãy đảm bảo mỗi tập đã hoàn thành:" },
+          },
         },
       },
 

@@ -163,6 +163,35 @@ export default function SlideView({ slide, current, total, lessonTitle, onPrev, 
               <span>{slide.content.tip}</span>
             </div>
           )}
+
+          {/* Translated body sections */}
+          {(["zh", "vi"] as LangKey[]).map((lang) => {
+            const t = translations?.[lang];
+            if (!t || !activeLangs.has(lang)) return null;
+            return (
+              <p key={lang} className="slide-translation">
+                {renderBody(t.body)}
+              </p>
+            );
+          })}
+
+          {/* Language toggle buttons */}
+          {hasTranslations && (
+            <div className="lang-btns">
+              {(Object.keys(LANG_LABELS) as LangKey[]).map((lang) =>
+                translations?.[lang] ? (
+                  <button
+                    key={lang}
+                    className={`lang-btn ${activeLangs.has(lang) ? "active" : ""}`}
+                    style={activeLangs.has(lang) ? { backgroundColor: config.color, borderColor: config.color } : { borderColor: config.color, color: config.color }}
+                    onClick={() => toggleLang(lang)}
+                  >
+                    {LANG_LABELS[lang]}
+                  </button>
+                ) : null
+              )}
+            </div>
+          )}
         </div>
       )}
 

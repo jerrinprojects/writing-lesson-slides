@@ -195,6 +195,15 @@ body {
   text-align: center;
 }
 
+.slide-translation {
+  font-size: 1.25rem;
+  color: #4b5563;
+  line-height: 1.6;
+  border-top: 1px dashed #e5e7eb;
+  padding-top: 16px;
+  margin-top: 4px;
+}
+
 .discussion-tip-row {
   display: flex;
   flex-direction: column;
