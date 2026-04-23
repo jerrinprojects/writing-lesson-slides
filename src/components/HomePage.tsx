@@ -9,7 +9,7 @@ export default function HomePage({ categories, onSelect }: HomePageProps) {
   return (
     <div className="home">
       <div className="home-header">
-        <h1 className="home-title">Writing Lessons</h1>
+        <h1 className="home-title">Lessons</h1>
         <p className="home-subtitle">Choose a section to get started</p>
       </div>
 
