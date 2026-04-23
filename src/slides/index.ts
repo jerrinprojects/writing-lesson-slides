@@ -1,7 +1,7 @@
 // ─── Shared ──────────────────────────────────────────────────────────────────
 
 export interface Category {
-  id: "writing-lessons" | "writing-of-the-week" | "group-discussion";
+  id: "writing-lessons" | "writing-of-the-week" | "group-discussion" | "inquiry";
   title: string;
   description: string;
   color: string;
@@ -30,6 +30,13 @@ export const categories: Category[] = [
     color: "#8b5cf6",
     icon: "D",
   },
+  {
+    id: "inquiry",
+    title: "Inquiry",
+    description: "Project-based learning — research, create, and present.",
+    color: "#f59e0b",
+    icon: "I",
+  },
 ];
 
 // ─── Writing Lessons (slide format) ──────────────────────────────────────────
@@ -47,7 +54,8 @@ export interface SlideTranslation {
 }
 
 export interface SlideContent {
-  type: "walt" | "success" | "learn" | "practice" | "apply" | "recap" | "evaluate" | "think" | "discussion";
+  type: "walt" | "success" | "learn" | "practice" | "apply" | "recap" | "evaluate" | "think" | "discussion"
+      | "hook" | "part-overview" | "info" | "example-slide" | "script-structure" | "checklist";
   body: string;
   examples?: string[];
   tip?: string;
@@ -59,7 +67,7 @@ export interface SlideContent {
 
 export interface Lesson {
   id: string;
-  category: "writing-lessons" | "group-discussion";
+  category: "writing-lessons" | "group-discussion" | "inquiry";
   title: string;
   description: string;
   color: string;
@@ -439,6 +447,631 @@ export const lessons: Lesson[] = [
           },
         },
       },
+    ],
+  },
+];
+
+// ─── Inquiry ──────────────────────────────────────────────────────────────────
+
+export const inquiryLessons: Lesson[] = [
+  {
+    id: "grown-from-the-ground",
+    category: "inquiry",
+    title: "Grown From the Ground",
+    description: "Create a multi-episode podcast about a staple food from a culture of your choice.",
+    color: "#f59e0b",
+    slides: [
+
+      // ── HOOK ─────────────────────────────────────────────────────
+      {
+        id: 1,
+        title: "Listen to This...",
+        summary: "Hook — listen first",
+        content: {
+          type: "hook",
+          body: "Your teacher is about to play a short clip from a real podcast.\n\nWhile you listen, think:\n\nWhat do you notice? How does it make you feel? What makes you want to keep listening?",
+          tip: "Podcasts like Brains On! and But Why reach millions of listeners every week — made by real teams, just like yours will be.",
+        },
+      },
+      {
+        id: 2,
+        title: "What is a Podcast?",
+        summary: "What is a podcast?",
+        content: {
+          type: "info",
+          body: "A podcast is a recorded audio show — like a radio programme, but on demand. Anyone can make one, and anyone can listen.",
+          examples: [
+            "Brains On! — science explained in a fun and surprising way",
+            "But Why: A Podcast for Curious Kids — listeners ask questions, experts answer",
+            "Wow in the World — two hosts explore weird and wonderful science",
+          ],
+          tip: "Millions of people listen to podcasts while cooking, travelling, or relaxing. Your podcast could reach your classmates — or beyond.",
+        },
+      },
+      {
+        id: 3,
+        title: "Your Mission",
+        summary: "The project overview",
+        content: {
+          type: "hook",
+          body: "You are going to create your own podcast series called **Grown From the Ground**.\n\n2–3 people per group. 4 episodes and a pilot.",
+          examples: [
+            "Topic: a staple food from a culture of your choice",
+            "You will research, write, record, and edit your own show",
+            "Each episode tells a different part of the story",
+          ],
+        },
+      },
+
+      // ── PART 1 ───────────────────────────────────────────────────
+      {
+        id: 4,
+        title: "Part 1 — Set Up Your Show",
+        summary: "Part 1 overview",
+        content: {
+          type: "part-overview",
+          body: "Before you record anything, you need to build your team and your brand.",
+          examples: [
+            "Step 1: Choose your culture",
+            "Step 2: Name your team and your podcast",
+            "Step 3: Listen to real podcasts",
+            "Step 4: Record Episode 0 — your pilot",
+          ],
+        },
+      },
+      {
+        id: 5,
+        title: "Step 1 — Choose Your Culture",
+        summary: "Choose your culture",
+        content: {
+          type: "info",
+          body: "Pick one country or cultural group that your podcast will focus on. This will be the heart of your whole series.",
+          examples: [
+            "Korean — Vietnamese — Mexican — Lebanese — Indian — Nigerian — Italian — Filipino",
+            "It can be YOUR culture or one you are genuinely curious about",
+            "Make sure there is enough to research — food, farming, and traditions",
+          ],
+          tip: "The best choice is one your whole team finds genuinely interesting. Curiosity makes better podcasts.",
+        },
+      },
+      {
+        id: 6,
+        title: "How to Choose — Ask Yourselves",
+        summary: "Questions to help you decide",
+        content: {
+          type: "info",
+          body: "Not sure which culture to pick? Talk through these questions as a team:",
+          examples: [
+            "Does anyone in our group have a personal connection to this culture?",
+            "Is there a food from this culture we find interesting or want to know more about?",
+            "Can we find enough information — books, websites, people to talk to?",
+            "Would this make an interesting story for our listeners?",
+          ],
+        },
+      },
+      {
+        id: 7,
+        title: "Step 2 — Name Your Team and Podcast",
+        summary: "Team name and podcast name",
+        content: {
+          type: "info",
+          body: "Your team name is who you are as a group. Your podcast name is the title of your show — it should hint at what the show is about.",
+          examples: [
+            "Team name example: The Root Crew / Ground Level / The Harvest Squad",
+            "Podcast name example: Soil and Soul / Seeds and Stories / The Harvest Hour",
+            "Write your team name and podcast name at the top of your planning document",
+          ],
+        },
+      },
+      {
+        id: 8,
+        title: "What Makes a Great Podcast Name?",
+        summary: "Tips for a great podcast name",
+        content: {
+          type: "info",
+          body: "A great podcast name does three things:",
+          examples: [
+            "Short and easy to remember — no more than 4 words",
+            "Gives a clue about the content — what is this show about?",
+            "Sounds interesting when you say it out loud",
+          ],
+          tip: "Say your podcast name out loud. Does it sound like something you would want to listen to?",
+        },
+      },
+      {
+        id: 9,
+        title: "Step 3 — Listen and Learn",
+        summary: "Listen to real podcasts",
+        content: {
+          type: "info",
+          body: "Before you record your own podcast, listen to how the professionals do it. Your teacher will play a short clip. As you listen, fill in your observation notes.",
+          examples: [
+            "Brains On! — notice how they hook you in the first 20 seconds",
+            "But Why — notice how they explain complicated ideas simply",
+            "Wow in the World — notice how two hosts talk to each other naturally",
+          ],
+        },
+      },
+      {
+        id: 10,
+        title: "What to Listen For",
+        summary: "Observation checklist",
+        content: {
+          type: "info",
+          body: "As you listen, pay attention to these four things:",
+          examples: [
+            "The hook — how do they grab your attention in the first 20 seconds?",
+            "The tone — are they serious, funny, curious, excited?",
+            "Explanation — how do they make a hard idea easy to understand?",
+            "The ending — how do they finish and make you want to come back?",
+          ],
+          tip: "The best podcasters make it sound like they are talking TO you — not reading AT you.",
+        },
+      },
+      {
+        id: 11,
+        title: "Episode 0 — Your Pilot (2–3 min)",
+        summary: "Pilot episode structure",
+        content: {
+          type: "script-structure",
+          body: "Your pilot is a short introduction to your show. It tells listeners who you are and what your podcast is about.",
+          examples: [
+            "Introduce your team — names and a fun fact about each person",
+            "Say your podcast name and describe what the show is about in one sentence",
+            "Tell listeners which culture you chose — and why you chose it",
+            "End with: \"In our next episode, we will be talking about...\"",
+          ],
+          tip: "Your pilot does not need to be perfect. It just needs to be YOU — real, enthusiastic, and clear.",
+        },
+      },
+
+      // ── WHAT EVERY EPISODE NEEDS ──────────────────────────────────
+      {
+        id: 12,
+        title: "Every Episode Needs This Structure",
+        summary: "Podcast episode structure",
+        content: {
+          type: "script-structure",
+          body: "Every episode of your podcast should follow the same basic structure. Learn this — then use it every time.",
+          examples: [
+            "Hook — a question, a fact, or a sound in the first 20–30 seconds",
+            "Introduction — who you are and what today's episode is about",
+            "Main Content — your research, explained clearly in your own words",
+            "Fun Fact — one surprising thing most people do not know",
+            "Outro — \"Thanks for listening. Next time we will cover...\"",
+          ],
+        },
+      },
+      {
+        id: 13,
+        title: "Writing Your Script",
+        summary: "How to write a podcast script",
+        content: {
+          type: "info",
+          body: "Write out everything you plan to say — word for word. Then practise reading it out loud before you record.",
+          examples: [
+            "Write the way you TALK — not the way you write an essay",
+            "Use short sentences. They are easier to say and easier to hear.",
+            "Example: \"Did you know one corn plant produces over 600 kernels? Wild, right?\"",
+            "Each team member should have clear lines — no one should be silent",
+          ],
+          tip: "If it sounds strange when you say it out loud, rewrite it until it sounds natural.",
+        },
+      },
+      {
+        id: 14,
+        title: "Recording Tips",
+        summary: "How to record well",
+        content: {
+          type: "info",
+          body: "Good audio makes a huge difference. Follow these steps every time you record:",
+          examples: [
+            "Find a quiet space — away from noise, fans, and other conversations",
+            "Hold the mic or phone 10–15 cm from your mouth",
+            "Speak slowly and clearly — slower than you think you need to",
+            "Do a 10-second test recording and listen back before the full take",
+            "If you make a mistake, pause and start that sentence again — you can edit it later",
+          ],
+        },
+      },
+      {
+        id: 15,
+        title: "Tools You Need",
+        summary: "Equipment and apps",
+        content: {
+          type: "info",
+          body: "You do not need expensive equipment. Here is what to use:",
+          examples: [
+            "Recording: phone voice memo / iPad / GarageBand / Audacity (free)",
+            "Script: Google Docs — shared with your whole team",
+            "Music: YouTube Audio Library or Pixabay — both free and royalty-free",
+            "Headphones: to listen back and check the quality of your recording",
+          ],
+          tip: "GarageBand (free on iPad and Mac) lets you record, add music, and edit — all in one place.",
+        },
+      },
+
+      // ── PART 2 ───────────────────────────────────────────────────
+      {
+        id: 16,
+        title: "Part 2 — Episode 1: Our Culture's Staple",
+        summary: "Part 2 overview",
+        content: {
+          type: "part-overview",
+          body: "Research the most important vegetable or fruit in your chosen culture. Then record Episode 1.",
+          examples: [
+            "Step 1: Choose your staple food",
+            "Step 2: Research its history and cultural importance",
+            "Step 3: Write and record Episode 1",
+          ],
+        },
+      },
+      {
+        id: 17,
+        title: "Step 1 — Choose Your Staple Food",
+        summary: "Choose a staple food",
+        content: {
+          type: "info",
+          body: "Pick one vegetable or fruit that is central to your chosen culture — something that has been grown and eaten there for a long time.",
+          examples: [
+            "Korea → Cabbage (used to make kimchi)",
+            "Mexico → Corn — maize (used in tortillas, tamales, and more)",
+            "Vietnam → Rice (eaten at almost every meal)",
+            "Lebanon → Chickpeas (used in hummus, falafel, and stews)",
+            "India → Eggplant — aubergine (used in dozens of traditional dishes)",
+          ],
+        },
+      },
+      {
+        id: 18,
+        title: "Research Questions — Episode 1",
+        summary: "Research questions for Episode 1",
+        content: {
+          type: "info",
+          body: "Use these questions to guide your research:",
+          examples: [
+            "What is this food called in the original language of that culture?",
+            "How long has it been grown there — years, centuries, thousands of years?",
+            "Why is it so important? (geography, climate, history)",
+            "How would life in that culture change if this food disappeared?",
+            "Are there any interesting stories, myths, or legends connected to it?",
+          ],
+          tip: "Use at least 3 different sources. If two sources disagree, mention it in your podcast — that is great content.",
+        },
+      },
+      {
+        id: 19,
+        title: "Example — Corn in Mexico",
+        summary: "Example: corn in Mexico",
+        content: {
+          type: "example-slide",
+          body: "Here is what strong research looks like for Episode 1:",
+          examples: [
+            "Corn (maize) has been grown in Mexico for over 9,000 years",
+            "It appears in almost every meal — tortillas, tamales, pozole, atole",
+            "The ancient Aztecs called corn \"the gift of the gods\" — it was sacred",
+            "Mexico has over 64 native varieties of corn — each region has its own",
+            "Without corn, Mexican food and culture as we know it would not exist",
+          ],
+          tip: "Specific numbers, names, and surprising details make a podcast interesting. Vague statements do not.",
+        },
+      },
+      {
+        id: 20,
+        title: "Episode 1 — Script Structure",
+        summary: "Episode 1 script structure",
+        content: {
+          type: "script-structure",
+          body: "Use this structure when writing your Episode 1 script:",
+          examples: [
+            "Hook: a surprising fact or question about your staple food",
+            "Introduce the food and the culture — who, what, where",
+            "Explain why it is a staple — history, geography, tradition",
+            "Fun fact: one thing most listeners would not know",
+            "Outro: \"Next time, we will explain exactly how this plant grows...\"",
+          ],
+        },
+      },
+      {
+        id: 21,
+        title: "Episode 1 — Before You Record",
+        summary: "Episode 1 checklist",
+        content: {
+          type: "checklist",
+          body: "Check every item before you press record:",
+          examples: [
+            "Script written and read aloud at least twice",
+            "Every team member knows their lines",
+            "All facts checked with a reliable source",
+            "Background music chosen and ready",
+            "10-second test recording done and listened back",
+            "Recording space is quiet",
+          ],
+        },
+      },
+
+      // ── PART 3 ───────────────────────────────────────────────────
+      {
+        id: 22,
+        title: "Part 3 — Episode 2: How It Grows",
+        summary: "Part 3 overview",
+        content: {
+          type: "part-overview",
+          body: "Research the growing conditions for your staple food. Then record Episode 2.",
+          examples: [
+            "Step 1: Learn what your plant needs to grow",
+            "Step 2: Research traditional and modern farming methods",
+            "Step 3: Write and record Episode 2",
+          ],
+        },
+      },
+      {
+        id: 23,
+        title: "What Does a Plant Need to Grow?",
+        summary: "Five growing conditions",
+        content: {
+          type: "info",
+          body: "Every plant has specific requirements. Research all five for your staple food:",
+          examples: [
+            "Soil type — sandy, clay, loamy, rich in nutrients",
+            "Temperature — what range does it grow in? What temperature kills it?",
+            "Water — how much per week? Does it like wet or dry conditions?",
+            "Sunlight — full sun, partial shade, or low light?",
+            "pH level — acidic (below 7), neutral (7), or alkaline (above 7)?",
+          ],
+          tip: "pH affects what nutrients a plant can absorb from the soil. Most vegetables prefer a pH between 6 and 7.",
+        },
+      },
+      {
+        id: 24,
+        title: "Research Questions — Episode 2",
+        summary: "Research questions for Episode 2",
+        content: {
+          type: "info",
+          body: "Use these questions to guide your research:",
+          examples: [
+            "What type of soil does this plant grow best in?",
+            "What climate does it need — tropical, temperate, arid, or cool?",
+            "When is it planted and when is it harvested? How long does it take?",
+            "How was it traditionally farmed — by hand, with animals, in terraces?",
+            "How is it farmed today — by machine, in greenhouses, on large plantations?",
+          ],
+        },
+      },
+      {
+        id: 25,
+        title: "Example — Rice in Vietnam",
+        summary: "Example: rice in Vietnam",
+        content: {
+          type: "example-slide",
+          body: "Here is what strong research looks like for Episode 2:",
+          examples: [
+            "Rice needs flooded paddy fields — roots sit in standing water during growth",
+            "Grows best in warm tropical climate: 20–35°C, humid",
+            "Planted in the wet season, harvested after 3–6 months",
+            "Prefers slightly acidic soil — pH around 5.5 to 6.5",
+            "Traditionally planted and harvested by hand in terraced hill fields",
+            "Some modern farms now use machinery, but many small family farms still use traditional methods",
+          ],
+        },
+      },
+      {
+        id: 26,
+        title: "Traditional vs Modern Farming",
+        summary: "Compare farming methods",
+        content: {
+          type: "info",
+          body: "For your podcast, compare how this food was grown in the past and how it is grown today:",
+          examples: [
+            "Traditional: hand tools, seasonal planting, natural compost, small-scale",
+            "Modern: machinery, chemical fertilisers, pesticides, year-round production",
+            "Traditional is often more sustainable — but produces less food",
+            "Modern farming feeds more people — but can damage the environment",
+            "Question for your podcast: which approach do you think is better — and why?",
+          ],
+          tip: "This is a great place to include your team's own opinion. Podcasts are more interesting when hosts share a point of view.",
+        },
+      },
+      {
+        id: 27,
+        title: "Episode 2 — Script Structure",
+        summary: "Episode 2 script structure",
+        content: {
+          type: "script-structure",
+          body: "Use this structure when writing your Episode 2 script:",
+          examples: [
+            "Hook: \"Have you ever wondered how [food] actually gets from the ground to your plate?\"",
+            "Walk through the five growing conditions: soil, temperature, water, sunlight, pH",
+            "Describe how it was traditionally farmed",
+            "Compare traditional vs modern farming — include your team's opinion",
+            "Outro: \"Next episode, we find out what happens after it is harvested...\"",
+          ],
+        },
+      },
+
+      // ── PART 4 ───────────────────────────────────────────────────
+      {
+        id: 28,
+        title: "Part 4 — Episode 3: From Ground to Table",
+        summary: "Part 4 overview",
+        content: {
+          type: "part-overview",
+          body: "Research how your staple food is cooked, eaten, and celebrated. Then record Episode 3.",
+          examples: [
+            "Step 1: Find out how the food is used in traditional cooking",
+            "Step 2: Research its cultural meaning — festivals, family, ceremonies",
+            "Step 3: (Optional) Interview someone from that culture",
+            "Step 4: Write and record Episode 3",
+          ],
+        },
+      },
+      {
+        id: 29,
+        title: "Research Questions — Episode 3",
+        summary: "Research questions for Episode 3",
+        content: {
+          type: "info",
+          body: "Use these questions to guide your research:",
+          examples: [
+            "What are the most famous traditional dishes that use this ingredient?",
+            "Is it eaten differently in different regions or communities?",
+            "Does it have a special meaning at festivals, ceremonies, or family gatherings?",
+            "Is there a story, legend, or tradition connected to how it is grown or eaten?",
+            "Has its role in the culture changed over time?",
+          ],
+        },
+      },
+      {
+        id: 30,
+        title: "Example — Cabbage in Korea",
+        summary: "Example: cabbage in Korea",
+        content: {
+          type: "example-slide",
+          body: "Here is what strong research looks like for Episode 3:",
+          examples: [
+            "Cabbage is the main ingredient in kimchi — Korea's most iconic food",
+            "Kimchi is eaten at almost every meal: breakfast, lunch, and dinner",
+            "Every November, families gather to make kimchi together — called Kimjang",
+            "Kimjang was recognised by UNESCO as an Intangible Cultural Heritage in 2013",
+            "Over 200 varieties of kimchi exist — each region has its own recipe",
+          ],
+          tip: "Cultural meaning is what makes this episode special. Do not just list facts — explain WHY the food matters to real people.",
+        },
+      },
+      {
+        id: 31,
+        title: "Optional — Interview Someone",
+        summary: "Guest interview tips",
+        content: {
+          type: "info",
+          body: "The strongest podcasts include real voices. Ask someone from your chosen culture these questions:",
+          examples: [
+            "What do you remember eating as a child that used this ingredient?",
+            "How did your family grow or buy this food?",
+            "What does this food mean to you or your family?",
+            "Is there a memory or story connected to this food that you would share?",
+          ],
+          tip: "Record the interview on your phone. Even a 30-second clip in someone's own words makes powerful content.",
+        },
+      },
+      {
+        id: 32,
+        title: "Episode 3 — Script Structure",
+        summary: "Episode 3 script structure",
+        content: {
+          type: "script-structure",
+          body: "Use this structure when writing your Episode 3 script:",
+          examples: [
+            "Hook: describe a dish so vividly the listener can almost taste it",
+            "Introduce the most important traditional recipes or uses",
+            "Explain the cultural meaning — celebrations, family, memory",
+            "Guest segment (if you have an interview): introduce them, play the clip",
+            "Fun fact + Outro: \"In our final episode, we bring this all back to our own classroom...\"",
+          ],
+        },
+      },
+
+      // ── PART 5 ───────────────────────────────────────────────────
+      {
+        id: 33,
+        title: "Part 5 — Episode 4: Can We Grow It?",
+        summary: "Part 5 overview",
+        content: {
+          type: "part-overview",
+          body: "Connect everything you have learned to your classroom garden. Then record your final episode.",
+          examples: [
+            "Step 1: Find out exactly what your plant needs to grow",
+            "Step 2: Compare that to what your classroom garden has",
+            "Step 3: Make a recommendation — yes, no, or maybe",
+            "Step 4: Reflect on what you learned across the whole project",
+            "Step 5: Write and record Episode 4",
+          ],
+        },
+      },
+      {
+        id: 34,
+        title: "What Does Our Garden Have?",
+        summary: "Assess your classroom garden",
+        content: {
+          type: "info",
+          body: "Before you can say whether your plant could grow in your classroom garden, you need to know what conditions you already have:",
+          examples: [
+            "Temperature: what is the range in our classroom and outside?",
+            "Sunlight: how many hours of direct sunlight does the garden get per day?",
+            "Soil: what type do we have? What is the pH?",
+            "Space: what is the area and volume of our garden beds?",
+            "Water: how often can we water, and how much?",
+          ],
+        },
+      },
+      {
+        id: 35,
+        title: "Research Questions — Episode 4",
+        summary: "Research questions for Episode 4",
+        content: {
+          type: "info",
+          body: "Use these questions to plan your recommendation:",
+          examples: [
+            "What soil type, temperature, pH, and water does your plant need?",
+            "Does our garden match those conditions — exactly, partially, or not at all?",
+            "What would we need to change or add to make it work?",
+            "If we cannot grow the exact plant — what similar plant could we grow instead?",
+            "What maths could we use to plan the garden? (area, perimeter, volume)",
+          ],
+        },
+      },
+      {
+        id: 36,
+        title: "Your Recommendation",
+        summary: "Make your recommendation",
+        content: {
+          type: "info",
+          body: "Your recommendation is the conclusion of your entire project. It should be backed by evidence from all four episodes:",
+          examples: [
+            "Yes — this plant could grow in our garden. Here is why...",
+            "No — it cannot grow here. Here is why, and here is what we could grow instead...",
+            "Maybe — with these specific changes, it could work...",
+          ],
+          tip: "A good recommendation is not just an opinion — it is an opinion supported by facts you researched yourself.",
+        },
+      },
+      {
+        id: 37,
+        title: "Episode 4 — Script Structure",
+        summary: "Episode 4 script structure",
+        content: {
+          type: "script-structure",
+          body: "Use this structure when writing your final episode script:",
+          examples: [
+            "Hook: \"We started this podcast wondering about [food] in [culture]...\"",
+            "Summarise what the plant needs to grow (from Episode 2)",
+            "Describe what your classroom garden has",
+            "Give your recommendation — with reasons and evidence",
+            "Reflection: what was the most surprising thing you discovered in this project?",
+            "Final outro: thank your listeners and wrap up the whole series",
+          ],
+        },
+      },
+      {
+        id: 38,
+        title: "Final Checklist — Series Complete!",
+        summary: "Final series checklist",
+        content: {
+          type: "checklist",
+          body: "Before you submit your podcast series, make sure every episode is done:",
+          examples: [
+            "Episode 0 (Pilot) — recorded and listened back",
+            "Episode 1 (Our Culture's Staple) — recorded and listened back",
+            "Episode 2 (How It Grows) — recorded and listened back",
+            "Episode 3 (From Ground to Table) — recorded and listened back",
+            "Episode 4 (Can We Grow It?) — recorded and listened back",
+            "All episodes edited — mistakes removed, music added",
+            "All team members contributed equally",
+            "Ready to share with the class",
+          ],
+        },
+      },
+
     ],
   },
 ];

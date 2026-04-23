@@ -117,6 +117,37 @@ body {
   }
 }
 
+/* ── Inquiry slide variants ── */
+.slide-examples--checklist {
+  gap: 12px;
+}
+
+.slide-examples--checklist li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-left: none;
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.check-box {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #16a34a;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* hook type — dark top border, slightly warm bg */
+.slide-card[style*="1e1b4b"] {
+  background: #fefce8;
+}
+
 /* ── Discussion slide layout ── */
 .slide-view--discussion {
   justify-content: space-between;

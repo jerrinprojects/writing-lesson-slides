@@ -33,15 +33,21 @@ function renderBody(text: string) {
 }
 
 const typeConfig: Record<string, { color: string; label: string }> = {
-  walt:       { color: "#4f86f7", label: "WALT" },
-  success:    { color: "#10b981", label: "SUCCESS CRITERIA" },
-  learn:      { color: "#f7a44f", label: "LEARNING" },
-  practice:   { color: "#c94fbe", label: "PRACTICE" },
-  apply:      { color: "#ef4444", label: "APPLY IT" },
-  recap:      { color: "#64748b", label: "RECAP" },
-  evaluate:   { color: "#f59e0b", label: "EVALUATION" },
-  think:      { color: "#06b6d4", label: "THINK" },
-  discussion: { color: "#8b5cf6", label: "" },
+  walt:            { color: "#4f86f7", label: "WALT" },
+  success:         { color: "#10b981", label: "SUCCESS CRITERIA" },
+  learn:           { color: "#f7a44f", label: "LEARNING" },
+  practice:        { color: "#c94fbe", label: "PRACTICE" },
+  apply:           { color: "#ef4444", label: "APPLY IT" },
+  recap:           { color: "#64748b", label: "RECAP" },
+  evaluate:        { color: "#f59e0b", label: "EVALUATION" },
+  think:           { color: "#06b6d4", label: "THINK" },
+  discussion:      { color: "#8b5cf6", label: "" },
+  hook:            { color: "#1e1b4b", label: "HOOK" },
+  "part-overview": { color: "#f59e0b", label: "PART OVERVIEW" },
+  info:            { color: "#f59e0b", label: "INFO" },
+  "example-slide": { color: "#0891b2", label: "EXAMPLE" },
+  "script-structure": { color: "#0d9488", label: "SCRIPT STRUCTURE" },
+  checklist:       { color: "#16a34a", label: "CHECKLIST" },
 };
 
 export default function SlideView({ slide, current, total, lessonTitle, onPrev, onNext, onBack }: SlideViewProps) {
@@ -141,9 +147,12 @@ export default function SlideView({ slide, current, total, lessonTitle, onPrev, 
           <p className="slide-body">{renderBody(slide.content.body)}</p>
 
           {slide.content.examples && slide.content.examples.length > 0 && (
-            <ul className="slide-examples">
+            <ul className={`slide-examples ${slide.content.type === "checklist" ? "slide-examples--checklist" : ""}`}>
               {slide.content.examples.map((ex, i) => (
-                <li key={i}>{ex}</li>
+                <li key={i}>
+                  {slide.content.type === "checklist" && <span className="check-box" />}
+                  {ex}
+                </li>
               ))}
             </ul>
           )}
