@@ -28,6 +28,7 @@ export default function App() {
   const openCategory = (id: Category["id"]) => {
     setActiveCategoryId(id);
     setView("category");
+    window.location.hash = id;
   };
 
   const openLesson = (id: string) => {
@@ -46,6 +47,7 @@ export default function App() {
     setActiveSheetId(null);
     setCurrent(0);
     setView("category");
+    if (activeCategoryId) window.location.hash = activeCategoryId;
   };
 
   const goHome = () => {
@@ -54,7 +56,18 @@ export default function App() {
     setActiveCategoryId(null);
     setCurrent(0);
     setView("home");
+    history.pushState("", document.title, window.location.pathname);
   };
+
+  // On first load, check if the URL has a category hash and navigate there
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "") as Category["id"];
+    const matched = categories.find((c) => c.id === hash);
+    if (matched) {
+      setActiveCategoryId(matched.id);
+      setView("category");
+    }
+  }, []);
 
   const total = activeLesson?.slides.length ?? 0;
 
