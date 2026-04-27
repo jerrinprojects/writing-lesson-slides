@@ -287,51 +287,69 @@ export const lessons: Lesson[] = [
       },
       {
         id: 4,
+        title: "How to Write a Scene Heading",
+        summary: "Scene heading format",
+        content: {
+          type: "learn",
+          body: "A **scene heading** (also called a slug line) tells the reader WHERE and WHEN the scene takes place. It always goes at the top of a scene in CAPITAL LETTERS.",
+          examples: [
+            "Format:  INT. or EXT.  +  LOCATION  –  TIME OF DAY",
+            "INT. = indoors   |   EXT. = outdoors",
+            "INT. CLASSROOM – MORNING",
+            "EXT. SCHOOL PLAYGROUND – AFTERNOON",
+            "INT. SIONE'S KITCHEN – NIGHT",
+            "Every time the location or time changes — new scene heading.",
+          ],
+          tip: "Keep it short and clear. Three things only: inside/outside, place, time.",
+        },
+      },
+      {
+        id: 5,
         title: "Practice 1 — Simple Conversion",
         summary: "Practice 1: basic layout",
         content: {
           type: "practice",
-          body: "Read the narrative below. Convert it into a production script using correct layout.\n\nNarrative:\n\"Mia asked Leo if he had seen her pencil case. He said no, but suggested she check under the table. She looked and found it.\"",
+          body: "Read the narrative below. Convert it into a production script using correct layout.\n\nNarrative:\n\"Leilani asked Sione if he had seen her pencil case. He said no, but suggested she check under the table. She looked and found it.\"",
           examples: [
             "Example script:",
-            "MIA:  Have you seen my pencil case?",
-            "LEO:  No. Did you check under the table?",
-            "MIA:  (looking under the table)  Oh — found it!",
+            "LEILANI:  Have you seen my pencil case?",
+            "SIONE:  No. Did you check under the table?",
+            "LEILANI:  (looking under the table)  Oh — found it!",
           ],
           tip: "Focus on the basics: CAPITAL NAME, colon, no speech marks.",
         },
       },
       {
-        id: 5,
+        id: 6,
         title: "Practice 2 — Add Stage Directions",
         summary: "Practice 2: stage directions",
         content: {
           type: "practice",
-          body: "This scene is more complex. Convert it and add at least 3 stage directions in (brackets).\n\nNarrative:\n\"Sam burst into the classroom, out of breath. He told Priya the bus had broken down and he'd run the whole way. Priya laughed and handed him a water bottle. Sam thanked her, then noticed the test papers on the desks and his expression changed.\"",
+          body: "This scene is more complex. Convert it and add at least 3 stage directions in (brackets).\n\nNarrative:\n\"Tane burst into the classroom, out of breath. He told Aroha the bus had broken down and he'd run the whole way. Aroha laughed and handed him a water bottle. Tane thanked her, then noticed the test papers on the desks and his expression changed.\"",
           examples: [
             "Example script:",
             "INT. CLASSROOM – MORNING",
-            "SAM:  (running in, out of breath)  The bus broke down. I ran the whole way.",
-            "PRIYA:  (laughing)  You ran? The whole way?",
-            "SAM:  (nodding, exhausted)  Every step.",
-            "PRIYA:  (handing him a water bottle)  Here. Drink.",
-            "SAM:  (taking it, then freezing)  Wait — are those test papers?",
+            "TANE:  (running in, out of breath)  The bus broke down. I ran the whole way.",
+            "AROHA:  (laughing)  You ran? The whole way?",
+            "TANE:  (nodding, exhausted)  Every step.",
+            "AROHA:  (handing him a water bottle)  Here. Drink.",
+            "TANE:  (taking it, then freezing)  Wait — are those test papers?",
           ],
           tip: "Start with the scene heading. Add (brackets) before or after dialogue — wherever they make most sense.",
         },
       },
       {
-        id: 6,
+        id: 7,
         title: "Practice 3 — Full Scene Workshop",
         summary: "Practice 3: full scene",
         content: {
           type: "practice",
-          body: "Convert this full scene into a production script. Include a scene heading, stage directions, and at least 3 characters.\n\nNarrative:\n\"It was the morning of the science fair. Maya walked in and saw that someone had knocked over her model. She looked around the room. Jake was standing nearby looking guilty. Their teacher, Ms Park, came in and asked what had happened. Maya started to say something, but Jake interrupted and admitted it was an accident — he had been trying to move it so it wouldn't fall. Maya hesitated, then said it was okay.\"",
+          body: "Convert this full scene into a production script. Include a scene heading, stage directions, and at least 3 characters.\n\nNarrative:\n\"It was the morning of the science fair. Mele walked in and saw that someone had knocked over her model. She looked around the room. Rangi was standing nearby looking guilty. Their teacher, Ms Fono, came in and asked what had happened. Mele started to say something, but Rangi interrupted and admitted it was an accident — he had been trying to move it so it wouldn't fall. Mele hesitated, then said it was okay.\"",
           tip: "This one is yours to complete. Take your time — a great script needs detail.",
         },
       },
       {
-        id: 7,
+        id: 8,
         title: "Apply It!",
         summary: "Use your own narrative",
         content: {
@@ -347,7 +365,7 @@ export const lessons: Lesson[] = [
         },
       },
       {
-        id: 8,
+        id: 9,
         title: "Narrative vs Script — 5 Key Differences",
         summary: "Recap",
         content: {
@@ -363,7 +381,7 @@ export const lessons: Lesson[] = [
         },
       },
       {
-        id: 9,
+        id: 10,
         title: "So... Can You?",
         summary: "Evaluation",
         content: {
@@ -380,7 +398,7 @@ export const lessons: Lesson[] = [
         },
       },
       {
-        id: 10,
+        id: 11,
         title: "Think About It...",
         summary: "Thinking question",
         content: {
