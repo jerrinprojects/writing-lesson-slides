@@ -368,6 +368,28 @@ body {
   color: #92400e;
 }
 
+/* ── Video links ── */
+.slide-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+.slide-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1e1b4b;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.slide-link-btn:hover { background: #312e81; }
+
 /* ═══════════════════════════════
    NAV BAR
 ═══════════════════════════════ */

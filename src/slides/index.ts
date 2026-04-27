@@ -52,6 +52,7 @@ export interface SlideContent {
   body: string;
   examples?: string[];
   tip?: string;
+  links?: { label: string; url: string }[];
   translations?: {
     zh?: SlideTranslation;  // Chinese Simplified
     vi?: SlideTranslation;  // Vietnamese
@@ -244,6 +245,21 @@ export const lessons: Lesson[] = [
     description: "Learn how to convert a narrative scene into a correctly formatted production script.",
     color: "#4f86f7",
     slides: [
+      {
+        id: 0,
+        title: "Which one would you use?",
+        summary: "Hook — narrative vs script",
+        content: {
+          type: "hook",
+          body: "Read both versions of the **same scene**. Which one would you rather have if you were an actor?\n\n**Narrative:**\n\"Tom walked in nervously and told the class he had something important to say.\"\n\n**Script:**\nINT. CLASSROOM – MORNING\nTOM:  (walking in, nervous)  I need to tell you something.\n\nTurn and talk: What's different? Which one tells the actor exactly what to do?",
+          tip: "Scripts are written FOR actors — every detail needs to be visible or speakable.",
+          links: [
+            { label: "📺 Scriptwriting for Kids & Teens (YouTube)", url: "https://www.youtube.com/watch?v=VYfznR8-c3c" },
+            { label: "📺 Write a Script — BBC Teach (KS2)", url: "https://www.youtube.com/watch?v=cId_pHJG5r8" },
+            { label: "📺 Movie Trailer Script — Middle School", url: "https://www.youtube.com/watch?v=EGSikYQcBKA" },
+          ],
+        },
+      },
       {
         id: 1,
         title: "WALT",

@@ -164,6 +164,16 @@ export default function SlideView({ slide, current, total, lessonTitle, onPrev, 
             </div>
           )}
 
+          {slide.content.links && slide.content.links.length > 0 && (
+            <div className="slide-links">
+              {slide.content.links.map((link, i) => (
+                <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="slide-link-btn">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          )}
+
           {/* Translated body sections */}
           {(["zh", "vi"] as LangKey[]).map((lang) => {
             const t = translations?.[lang];
