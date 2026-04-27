@@ -377,6 +377,9 @@ body {
   width: 100%;
   border-top: 1px solid #f1f5f9;
   background: white;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
 }
 
 .nav-btn {
@@ -640,7 +643,7 @@ body {
   .slide-examples li { font-size: 1.1rem; padding: 8px 16px; }
   .slide-tip    { font-size: 1rem; padding: 12px 16px; }
 
-  .nav-bar { padding: 14px 24px 20px; gap: 16px; }
+  .nav-bar { padding: 14px 24px 20px; gap: 16px; position: sticky; bottom: 0; }
   .nav-btn  { padding: 12px 20px; font-size: 1rem; min-width: 80px; }
   .slide-counter { font-size: 1rem; }
 
