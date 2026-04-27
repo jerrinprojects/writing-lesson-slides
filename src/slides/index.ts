@@ -236,6 +236,162 @@ export const lessons: Lesson[] = [
     ],
   },
 
+  // ─── Narrative to Production Script ──────────────────────────────
+  {
+    id: "narrative-to-script",
+    category: "writing-lessons",
+    title: "Narrative to Production Script",
+    description: "Learn how to convert a narrative scene into a correctly formatted production script.",
+    color: "#4f86f7",
+    slides: [
+      {
+        id: 1,
+        title: "WALT",
+        summary: "What we are learning",
+        content: {
+          type: "walt",
+          body: "We Are Learning To write a **production script** by converting a narrative story into script format.",
+        },
+      },
+      {
+        id: 2,
+        title: "Success Criteria",
+        summary: "I can...",
+        content: {
+          type: "success",
+          body: "By the end of this lesson, you will be able to:",
+          examples: [
+            "I can write character names in CAPITAL LETTERS followed by a colon.",
+            "I can write stage directions in (brackets) to show actions and feelings.",
+            "I can write dialogue that sounds like real speech — no speech marks.",
+            "I can write a scene heading that shows the setting.",
+            "I can convert a narrative scene into a correctly formatted production script.",
+          ],
+        },
+      },
+      {
+        id: 3,
+        title: "Narrative vs Script — What's Different?",
+        summary: "Key differences",
+        content: {
+          type: "learn",
+          body: "The same scene looks completely different on the page. A narrative tells the reader. A script tells the actor.",
+          examples: [
+            "Narrative: \"Tom walked in nervously and said he had something important to say.\"",
+            "Script:   TOM: (walking in, nervous)  I need to tell you something.",
+            "Narrative uses speech marks and reporting verbs — script uses neither.",
+            "Script adds a scene heading:  INT. CLASSROOM – MORNING",
+          ],
+          tip: "In a script, every word is spoken or shown — nothing is described to the reader.",
+        },
+      },
+      {
+        id: 4,
+        title: "Practice 1 — Simple Conversion",
+        summary: "Practice 1: basic layout",
+        content: {
+          type: "practice",
+          body: "Read the narrative below. Convert it into a production script using correct layout.\n\nNarrative:\n\"Mia asked Leo if he had seen her pencil case. He said no, but suggested she check under the table. She looked and found it.\"",
+          examples: [
+            "Example script:",
+            "MIA:  Have you seen my pencil case?",
+            "LEO:  No. Did you check under the table?",
+            "MIA:  (looking under the table)  Oh — found it!",
+          ],
+          tip: "Focus on the basics: CAPITAL NAME, colon, no speech marks.",
+        },
+      },
+      {
+        id: 5,
+        title: "Practice 2 — Add Stage Directions",
+        summary: "Practice 2: stage directions",
+        content: {
+          type: "practice",
+          body: "This scene is more complex. Convert it and add at least 3 stage directions in (brackets).\n\nNarrative:\n\"Sam burst into the classroom, out of breath. He told Priya the bus had broken down and he'd run the whole way. Priya laughed and handed him a water bottle. Sam thanked her, then noticed the test papers on the desks and his expression changed.\"",
+          examples: [
+            "Example script:",
+            "INT. CLASSROOM – MORNING",
+            "SAM:  (running in, out of breath)  The bus broke down. I ran the whole way.",
+            "PRIYA:  (laughing)  You ran? The whole way?",
+            "SAM:  (nodding, exhausted)  Every step.",
+            "PRIYA:  (handing him a water bottle)  Here. Drink.",
+            "SAM:  (taking it, then freezing)  Wait — are those test papers?",
+          ],
+          tip: "Start with the scene heading. Add (brackets) before or after dialogue — wherever they make most sense.",
+        },
+      },
+      {
+        id: 6,
+        title: "Practice 3 — Full Scene Workshop",
+        summary: "Practice 3: full scene",
+        content: {
+          type: "practice",
+          body: "Convert this full scene into a production script. Include a scene heading, stage directions, and at least 3 characters.\n\nNarrative:\n\"It was the morning of the science fair. Maya walked in and saw that someone had knocked over her model. She looked around the room. Jake was standing nearby looking guilty. Their teacher, Ms Park, came in and asked what had happened. Maya started to say something, but Jake interrupted and admitted it was an accident — he had been trying to move it so it wouldn't fall. Maya hesitated, then said it was okay.\"",
+          tip: "This one is yours to complete. Take your time — a great script needs detail.",
+        },
+      },
+      {
+        id: 7,
+        title: "Apply It!",
+        summary: "Use your own narrative",
+        content: {
+          type: "apply",
+          body: "Go back to your own narrative writing. Find a scene where two or more characters are talking.\n\nConvert that scene into a production script.",
+          examples: [
+            "At least 6 lines of dialogue",
+            "At least 3 stage directions in (brackets)",
+            "A scene heading: INT./EXT. + PLACE + TIME",
+            "No speech marks — anywhere",
+          ],
+          tip: "If your narrative doesn't have much dialogue, add some. Think: what would your characters really say?",
+        },
+      },
+      {
+        id: 8,
+        title: "Narrative vs Script — 5 Key Differences",
+        summary: "Recap",
+        content: {
+          type: "recap",
+          body: "Here are the five most important differences between a narrative and a production script:",
+          examples: [
+            "Speech marks  →  Gone. Scripts never use speech marks.",
+            "\"she said nervously\"  →  Character name + (nervous) before the line.",
+            "\"he replied / she whispered\"  →  Removed. The character name does the job.",
+            "Setting described in prose  →  Scene heading: INT. CLASSROOM – MORNING",
+            "Written for a reader  →  Written for an actor.",
+          ],
+        },
+      },
+      {
+        id: 9,
+        title: "So... Can You?",
+        summary: "Evaluation",
+        content: {
+          type: "evaluate",
+          body: "Look at your completed script. Give yourself a score from 1 to 4 for each:",
+          examples: [
+            "All character names in CAPITAL LETTERS — 1 / 2 / 3 / 4",
+            "Stage directions in (brackets) — 1 / 2 / 3 / 4",
+            "Dialogue sounds like natural speech — 1 / 2 / 3 / 4",
+            "No speech marks used anywhere — 1 / 2 / 3 / 4",
+            "Scene heading is correct — 1 / 2 / 3 / 4",
+          ],
+          tip: "4 = done correctly every time.  2 = done sometimes.  1 = needs fixing.",
+        },
+      },
+      {
+        id: 10,
+        title: "Think About It...",
+        summary: "Thinking question",
+        content: {
+          type: "think",
+          body: "Can a script tell a story just as powerfully as a narrative?\n\nOr does it lose something when you take away the description?",
+          tip: "Think about what a script can do that a narrative can't — and what it can't do that a narrative can.",
+        },
+      },
+    ],
+  },
+
   // ─── Group Discussion ─────────────────────────────────────────────
   {
     id: "t2-day1",
