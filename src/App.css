@@ -154,6 +154,7 @@ body {
 /* ── Discussion slide layout ── */
 .slide-view--discussion {
   justify-content: space-between;
+  align-items: center;
   background: #f5f3ff;
 }
 
@@ -171,6 +172,9 @@ body {
   text-align: center;
   gap: 32px;
   flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
 }
 
 .discussion-section {

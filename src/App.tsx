@@ -58,14 +58,28 @@ export default function App() {
     history.pushState("", document.title, window.location.pathname);
   };
 
-  // On first load, check if the URL has a category hash and navigate there
+  // Sync hash → view (on mount and on browser back/forward)
   useEffect(() => {
-    const hash = window.location.hash.replace("#", "") as Category["id"];
-    const matched = categories.find((c) => c.id === hash);
-    if (matched) {
-      setActiveCategoryId(matched.id);
-      setView("category");
-    }
+    const handleHash = () => {
+      const hash = window.location.hash.replace("#", "") as Category["id"];
+      const matched = categories.find((c) => c.id === hash);
+      if (matched) {
+        setActiveCategoryId(matched.id);
+        setActiveLessonId(null);
+        setActiveSheetId(null);
+        setCurrent(0);
+        setView("category");
+      } else if (!hash) {
+        setActiveCategoryId(null);
+        setActiveLessonId(null);
+        setActiveSheetId(null);
+        setCurrent(0);
+        setView("home");
+      }
+    };
+    handleHash(); // run on mount
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
   }, []);
 
   const total = activeLesson?.slides.length ?? 0;
