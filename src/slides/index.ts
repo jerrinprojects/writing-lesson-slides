@@ -276,11 +276,10 @@ export const lessons: Lesson[] = [
           type: "success",
           body: "By the end of this lesson, you will be able to:",
           examples: [
-            "I can write character names in CAPITAL LETTERS followed by a colon.",
+            "I can write character names in capital letters followed by a colon.",
             "I can write stage directions in (brackets) to show actions and feelings.",
-            "I can write dialogue that sounds like real speech — no speech marks.",
             "I can write a scene heading that shows the setting.",
-            "I can convert a narrative scene into a correctly formatted production script.",
+            "I can write dialogue that sounds like real speech — no speech marks.",
           ],
         },
       },
