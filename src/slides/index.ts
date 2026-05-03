@@ -254,9 +254,8 @@ export const lessons: Lesson[] = [
           body: "Read both versions of the **same scene**. Which one would you rather have if you were an actor?\n\n**Narrative:**\n\"Tom walked in nervously and told the class he had something important to say.\"\n\n**Script:**\nINT. CLASSROOM – MORNING\nTOM:  (walking in, nervous)  I need to tell you something.\n\nTurn and talk: What's different? Which one tells the actor exactly what to do?",
           tip: "Scripts are written FOR actors — every detail needs to be visible or speakable.",
           links: [
-            { label: "📺 Scriptwriting for Kids & Teens (YouTube)", url: "https://www.youtube.com/watch?v=VYfznR8-c3c" },
-            { label: "📺 Write a Script — BBC Teach (KS2)", url: "https://www.youtube.com/watch?v=cId_pHJG5r8" },
-            { label: "📺 Movie Trailer Script — Middle School", url: "https://www.youtube.com/watch?v=EGSikYQcBKA" },
+            { label: "📺 Watch Video 1 (YouTube)", url: "https://www.youtube.com/watch?v=tZ7Z8Gp-yaE" },
+            { label: "📺 Watch Video 2 (YouTube)", url: "https://www.youtube.com/watch?v=U9CSwpefX-Q" },
           ],
         },
       },
