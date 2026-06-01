@@ -612,6 +612,81 @@ export const lessons: Lesson[] = [
       },
     ],
   },
+
+  {
+    id: "discussion-jun2",
+    category: "group-discussion",
+    title: "Jun 2 Discussion",
+    description: "Five discussion questions on resilience and a growth mindset — perseverance, mistakes, challenges, achievement, and self-talk.",
+    color: "#8b5cf6",
+    slides: [
+      {
+        id: 1,
+        title: "Perseverance",
+        summary: "A time you wanted to give up but didn't",
+        content: {
+          type: "discussion",
+          body: "Can you think of a time when you wanted to give up but didn't?\n\nWhat helped you keep going?",
+          translations: {
+            zh: { body: "你能想起一次你想放弃但没有放弃的经历吗？\n\n是什么让你坚持下去？" },
+            vi: { body: "Bạn có thể nghĩ về một lần bạn muốn bỏ cuộc nhưng đã không bỏ cuộc không?\n\nĐiều gì đã giúp bạn tiếp tục?" },
+          },
+        },
+      },
+      {
+        id: 2,
+        title: "Learning from Mistakes",
+        summary: "How mistakes make us better",
+        content: {
+          type: "discussion",
+          body: "Why do you think learning from mistakes can make us better?",
+          translations: {
+            zh: { body: "你认为从错误中学习为什么能让我们变得更好？" },
+            vi: { body: "Tại sao bạn nghĩ việc học từ những sai lầm có thể giúp chúng ta tốt hơn?" },
+          },
+        },
+      },
+      {
+        id: 3,
+        title: "Trying Something New",
+        summary: "Something new you'd like to try",
+        content: {
+          type: "discussion",
+          body: "What's something new you'd like to try even if it's challenging?",
+          translations: {
+            zh: { body: "即使有挑战性，你想尝试什么新事物？" },
+            vi: { body: "Có điều gì mới bạn muốn thử ngay cả khi nó đầy thử thách không?" },
+          },
+        },
+      },
+      {
+        id: 4,
+        title: "Achievement",
+        summary: "How it feels to finally achieve something hard",
+        content: {
+          type: "discussion",
+          body: "How do you feel when you finally achieve something that was hard at first?",
+          translations: {
+            zh: { body: "当你终于完成一件起初很难的事情时，你有什么感觉？" },
+            vi: { body: "Bạn cảm thấy thế nào khi cuối cùng đạt được điều gì đó vốn ban đầu rất khó khăn?" },
+          },
+        },
+      },
+      {
+        id: 5,
+        title: "Positive Self-Talk",
+        summary: "When something doesn't go as planned",
+        content: {
+          type: "discussion",
+          body: "What's one positive thing you can say to yourself when something doesn't go as planned?",
+          translations: {
+            zh: { body: "当事情没有按计划进行时，你可以对自己说一句什么积极的话？" },
+            vi: { body: "Có một điều tích cực nào bạn có thể nói với chính mình khi mọi thứ không diễn ra như kế hoạch không?" },
+          },
+        },
+      },
+    ],
+  },
 ];
 export const writingSheets: WritingSheet[] = [
   {
