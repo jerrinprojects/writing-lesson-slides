@@ -423,6 +423,20 @@ export const lessons: Lesson[] = [
         },
       },
       {
+        id: 17,
+        title: "Success Criteria",
+        summary: "I can...",
+        content: {
+          type: "success",
+          body: "By the end of this lesson, you will be able to:",
+          examples: [
+            "I can identify language features in song lyrics — **repetition**, **rhyme**, and **imagery**.",
+            "I can identify the structure of a song — **verse**, **pre-chorus**, **chorus**, **bridge**, and **hook**.",
+            "I can write my own **verse** and **chorus** using at least two language features.",
+          ],
+        },
+      },
+      {
         id: 2,
         title: "Hook: Listen First",
         summary: "What gets stuck in your head?",
@@ -514,11 +528,11 @@ export const lessons: Lesson[] = [
           type: "learn",
           body: "Songs are often organised into different parts. Each part has its own job.",
           examples: [
-            "**Verse** — Tells the story or sets the scene. The lyrics change each time. Usually quieter and more spoken.",
-            "**Pre-Chorus** — A short \"lift\" between the verse and chorus. The melody rises to build excitement and prepare you for the big moment.",
-            "**Chorus** — The main message of the song. Catchy, repeated, and easy to remember. The song title often appears here.",
-            "**Bridge** — A change or new idea, usually near the end. Different melody or feeling — it breaks the pattern before the final chorus.",
-            "**Hook** — The catchiest line everyone remembers. Often part of the chorus, but it can appear anywhere.",
+            "**Verse**\nTells the story or sets the scene. The lyrics change each time. Usually quieter, more like talking.",
+            "**Pre-Chorus**\nA short \"lift\" between verse and chorus. The melody rises to build excitement before the big moment.",
+            "**Chorus**\nThe main message of the song. Catchy, repeated, and easy to remember — the song title often appears here.",
+            "**Bridge**\nA change or new idea, usually near the end. Different melody or feeling — breaks the pattern before the final chorus.",
+            "**Hook**\nThe catchiest line everyone remembers. Often inside the chorus, but it can appear anywhere.",
           ],
           tip: "Language features make lyrics interesting. Structure gives lyrics shape.",
         },
