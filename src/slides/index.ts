@@ -468,6 +468,9 @@ export const lessons: Lesson[] = [
             "2. **Second listen:** What language features can you notice?",
             "3. **Third listen:** What structure can you identify?",
           ],
+          links: [
+            { label: "🎵 How Far I'll Go — Moana (YouTube)", url: "https://www.youtube.com/results?search_query=How+Far+I%27ll+Go+Moana+official" },
+          ],
         },
       },
       {

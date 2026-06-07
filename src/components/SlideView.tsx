@@ -151,7 +151,7 @@ export default function SlideView({ slide, current, total, lessonTitle, onPrev, 
               {slide.content.examples.map((ex, i) => (
                 <li key={i}>
                   {slide.content.type === "checklist" && <span className="check-box" />}
-                  {ex}
+                  {renderBody(ex)}
                 </li>
               ))}
             </ul>
