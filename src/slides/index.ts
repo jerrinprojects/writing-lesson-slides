@@ -490,47 +490,19 @@ export const lessons: Lesson[] = [
       },
       {
         id: 6,
-        title: "Lyrics Example: Verse 1",
-        summary: "Find features in Verse 1",
+        title: "Find the Features in the Lyrics",
+        summary: "Look at the whole song",
         content: {
           type: "practice",
-          body: "Look at **Verse 1** from *How Far I'll Go*.\n\nWith a partner, read the lyrics and look for:",
+          body: "Read the full lyrics of *How Far I'll Go* and listen to the song again.\n\nWith a partner, find **one example of each feature**:",
           examples: [
-            "repetition",
-            "rhyme",
-            "imagery",
+            "**Repetition** — a word, phrase, or line used more than once",
+            "**Rhyme** — two lines that end with similar sounds",
+            "**Imagery** — words that create a clear picture in your mind",
           ],
-          tip: "Task: Underline or highlight one example of each feature.",
-        },
-      },
-      {
-        id: 7,
-        title: "Listen Again: Find the Features",
-        summary: "Listen for features",
-        content: {
-          type: "practice",
-          body: "Listen to the song again.\n\nThis time, focus on the language features. Fill in one example for each:",
-          examples: [
-            "**Repetition** — Example I noticed: ___________",
-            "**Rhyme** — Example I noticed: ___________",
-            "**Imagery** — Example I noticed: ___________",
-          ],
-          tip: "After listening, share your strongest example with a partner.",
-        },
-      },
-      {
-        id: 8,
-        title: "Discuss the Features",
-        summary: "Class discussion",
-        content: {
-          type: "discussion",
-          body: "**Class discussion** — What did we notice?",
-          examples: [
-            "What words or ideas were repeated?",
-            "What rhyming words did you hear?",
-            "What images did the lyrics create?",
-            "How did these features help make the song memorable?",
-            "Which feature was easiest to find?",
+          tip: "Teacher model — Repetition: the line \"How far I'll go\" repeats in the chorus, which is what makes it the hook everyone remembers.",
+          links: [
+            { label: "📄 How Far I'll Go — Full Lyrics", url: "https://www.google.com/search?q=How+Far+I%27ll+Go+Moana+lyrics" },
           ],
         },
       },
@@ -580,22 +552,6 @@ export const lessons: Lesson[] = [
             "**Bridge**, if you notice one",
           ],
           tip: "Then compare your labels with a partner. Partner talk: How did you know which part was the chorus?",
-        },
-      },
-      {
-        id: 12,
-        title: "Share Back: Structure",
-        summary: "Class discussion",
-        content: {
-          type: "discussion",
-          body: "**Class discussion**",
-          examples: [
-            "Which part was the verse?",
-            "Which part was the chorus?",
-            "What part repeated?",
-            "What line was the hook?",
-            "How did the structure help the song's message?",
-          ],
         },
       },
       {
