@@ -135,7 +135,7 @@ export default function SlideView({ slide, current, total, lessonTitle, onPrev, 
         </div>
       ) : (
         // ── Regular slide ──
-        <div className="slide-card" style={{ borderTop: `6px solid ${config.color}` }}>
+        <div className={`slide-card slide-card--${slide.content.type}`} style={{ borderTop: `6px solid ${config.color}` }}>
           {config.label && (
             <div className="slide-type-badge" style={{ backgroundColor: config.color }}>
               {config.label}

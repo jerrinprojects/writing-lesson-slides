@@ -337,6 +337,13 @@ body {
   line-height: 1.7;
 }
 
+.slide-card--walt .slide-body {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #1e2a3a;
+}
+
 /* Example list — clean, NO background boxes */
 .slide-examples {
   list-style: none;
@@ -617,6 +624,7 @@ body {
   .slide-card   { padding: 40px 48px 32px; gap: 28px; }
   .slide-title  { font-size: 2.4rem; }
   .slide-body   { font-size: 1.4rem; }
+  .slide-card--walt .slide-body { font-size: 2rem; }
   .slide-examples li { font-size: 1.25rem; }
   .slide-tip    { font-size: 1.1rem; }
   .nav-bar      { padding: 16px 48px 24px; }
@@ -663,6 +671,7 @@ body {
 
   .slide-title  { font-size: 1.9rem; }
   .slide-body   { font-size: 1.2rem; }
+  .slide-card--walt .slide-body { font-size: 1.6rem; }
   .slide-examples li { font-size: 1.1rem; padding: 8px 16px; }
   .slide-tip    { font-size: 1rem; padding: 12px 16px; }
 

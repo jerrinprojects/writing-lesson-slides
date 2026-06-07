@@ -419,7 +419,7 @@ export const lessons: Lesson[] = [
         summary: "Features + Structure",
         content: {
           type: "walt",
-          body: "**Features + Structure**\n\nWe Are Learning To understand common language features and structure in song lyrics.",
+          body: "**Features + Structure**\n\nWALT understand common language features and structure in song lyrics.",
         },
       },
       {
@@ -433,6 +433,9 @@ export const lessons: Lesson[] = [
             "What words or lines did you remember?",
             "Was anything repeated?",
             "What feeling did the song create?",
+          ],
+          links: [
+            { label: "🎵 You're Welcome — Moana (YouTube)", url: "https://www.youtube.com/results?search_query=You%27re+Welcome+Moana+official" },
           ],
         },
       },
