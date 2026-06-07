@@ -428,11 +428,11 @@ export const lessons: Lesson[] = [
         summary: "I can...",
         content: {
           type: "success",
-          body: "By the end of this lesson, you will be able to:",
+          body: "I can:",
           examples: [
-            "I can identify language features in song lyrics — **repetition**, **rhyme**, and **imagery**.",
-            "I can identify the structure of a song — **verse**, **pre-chorus**, **chorus**, **bridge**, and **hook**.",
-            "I can write my own **verse** and **chorus** using at least two language features.",
+            "find **repetition**, **rhyme**, and **imagery** in song lyrics.",
+            "name the parts of a song — **verse**, **pre-chorus**, **chorus**, **bridge**, and **hook**.",
+            "write my own **verse** and **chorus** using two language features.",
           ],
         },
       },
