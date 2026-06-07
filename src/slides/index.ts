@@ -595,12 +595,12 @@ export const lessons: Lesson[] = [
         summary: "One verse + one chorus",
         content: {
           type: "apply",
-          body: "Write:\n\n**One verse** — This tells the story or gives details.\n\n**One chorus** — This shares the main message and should be memorable.\n\nTry to include at least **two** of these features:",
+          body: "Write **one verse** (tells the story) and **one chorus** (the main message — should be memorable).\n\nTry to include at least **two** of these features: **repetition**, **rhyme**, **imagery**.\n\nHere is a teacher's example to inspire you:",
           examples: [
-            "repetition",
-            "rhyme",
-            "imagery",
+            "**Example Verse** (about friendship)\n\"We met on the first day of school,\nlaughed at the same silly jokes,\nshared snacks at the bottom of the field,\ntold secrets nobody else knows.\"",
+            "**Example Chorus** (about friendship)\n\"You and me, side by side,\nthrough the laughter and the long, long days.\nYou and me, side by side —\nnothing's gonna change the way we stay.\"",
           ],
+          tip: "Notice the features used: **repetition** (\"side by side\"), **rhyme** (\"days\" / \"stay\"), and **imagery** (\"bottom of the field\").",
         },
       },
       {
