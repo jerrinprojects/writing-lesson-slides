@@ -406,6 +406,258 @@ export const lessons: Lesson[] = [
     ],
   },
 
+  {
+    id: "lyrics-writing-workshop",
+    category: "writing-lessons",
+    title: "Lyrics Writing Workshop",
+    description: "Explore language features and structure in song lyrics, then write your own verse and chorus.",
+    color: "#4f86f7",
+    slides: [
+      {
+        id: 1,
+        title: "Lyrics Writing Workshop",
+        summary: "Features + Structure",
+        content: {
+          type: "walt",
+          body: "**Features + Structure**\n\nWe Are Learning To understand common language features and structure in song lyrics.",
+        },
+      },
+      {
+        id: 2,
+        title: "Hook: Listen First",
+        summary: "What gets stuck in your head?",
+        content: {
+          type: "hook",
+          body: "We will start by listening to a song.\n\nWhile listening, think:\n\n**What makes some lyrics get stuck in your head?**\n\nAfter listening, turn and talk:",
+          examples: [
+            "What words or lines did you remember?",
+            "Was anything repeated?",
+            "What feeling did the song create?",
+          ],
+        },
+      },
+      {
+        id: 3,
+        title: "What are lyrics?",
+        summary: "Lyrics = the words of a song",
+        content: {
+          type: "learn",
+          body: "**Lyrics are the words of a song.**\n\nLyrics are written to:",
+          examples: [
+            "be sung or performed",
+            "create feeling",
+            "share a message or story",
+            "match rhythm and music",
+            "be memorable",
+          ],
+          tip: "Key idea: Lyrics are like poetry with music.",
+        },
+      },
+      {
+        id: 4,
+        title: "Today's Song",
+        summary: "How Far I'll Go — Moana",
+        content: {
+          type: "info",
+          body: "**Song:** *How Far I'll Go* — from *Moana*\n\nWe will listen to the same song more than once.\n\nEach time, we will focus on something different:",
+          examples: [
+            "1. **First listen:** What gets stuck in your head?",
+            "2. **Second listen:** What language features can you notice?",
+            "3. **Third listen:** What structure can you identify?",
+          ],
+        },
+      },
+      {
+        id: 5,
+        title: "Feature Focus",
+        summary: "3 common lyric features",
+        content: {
+          type: "learn",
+          body: "Today we are looking for **3 common lyric features**.",
+          examples: [
+            "**Repetition** — Words, phrases, or lines used again",
+            "**Rhyme** — Words that sound the same or similar",
+            "**Imagery** — Words that create a picture in your mind",
+          ],
+          tip: "Listening goal: Can you spot these features in the lyrics?",
+        },
+      },
+      {
+        id: 6,
+        title: "Lyrics Example: Verse 1",
+        summary: "Find features in Verse 1",
+        content: {
+          type: "practice",
+          body: "Look at **Verse 1** from *How Far I'll Go*.\n\nWith a partner, read the lyrics and look for:",
+          examples: [
+            "repetition",
+            "rhyme",
+            "imagery",
+          ],
+          tip: "Task: Underline or highlight one example of each feature.",
+        },
+      },
+      {
+        id: 7,
+        title: "Listen Again: Find the Features",
+        summary: "Listen for features",
+        content: {
+          type: "practice",
+          body: "Listen to the song again.\n\nThis time, focus on the language features. Fill in one example for each:",
+          examples: [
+            "**Repetition** — Example I noticed: ___________",
+            "**Rhyme** — Example I noticed: ___________",
+            "**Imagery** — Example I noticed: ___________",
+          ],
+          tip: "After listening, share your strongest example with a partner.",
+        },
+      },
+      {
+        id: 8,
+        title: "Discuss the Features",
+        summary: "Class discussion",
+        content: {
+          type: "discussion",
+          body: "**Class discussion** — What did we notice?",
+          examples: [
+            "What words or ideas were repeated?",
+            "What rhyming words did you hear?",
+            "What images did the lyrics create?",
+            "How did these features help make the song memorable?",
+            "Which feature was easiest to find?",
+          ],
+        },
+      },
+      {
+        id: 9,
+        title: "Structure of Song Lyrics",
+        summary: "Verse, Chorus, Bridge, Hook",
+        content: {
+          type: "learn",
+          body: "Songs are often organised into different parts.",
+          examples: [
+            "**Verse** — Tells the story or gives details",
+            "**Chorus** — Main message; usually repeated",
+            "**Bridge** — A change or new idea",
+            "**Hook** — Catchy line people remember",
+          ],
+          tip: "Language features make lyrics interesting. Structure gives lyrics shape.",
+        },
+      },
+      {
+        id: 10,
+        title: "Listen Again: Notice the Structure",
+        summary: "Listen for structure",
+        content: {
+          type: "practice",
+          body: "Listen to the song again.\n\nThis time, focus on the structure. Think:",
+          examples: [
+            "Where is the verse?",
+            "Where is the chorus?",
+            "What part repeats?",
+            "What line feels like the hook?",
+            "Is there a bridge or change?",
+          ],
+        },
+      },
+      {
+        id: 11,
+        title: "Label the Lyrics",
+        summary: "Verse, Chorus, Hook, Bridge",
+        content: {
+          type: "practice",
+          body: "Look at the lyrics sheet.\n\nLabel the parts:",
+          examples: [
+            "**Verse**",
+            "**Chorus**",
+            "**Hook**",
+            "**Bridge**, if you notice one",
+          ],
+          tip: "Then compare your labels with a partner. Partner talk: How did you know which part was the chorus?",
+        },
+      },
+      {
+        id: 12,
+        title: "Share Back: Structure",
+        summary: "Class discussion",
+        content: {
+          type: "discussion",
+          body: "**Class discussion**",
+          examples: [
+            "Which part was the verse?",
+            "Which part was the chorus?",
+            "What part repeated?",
+            "What line was the hook?",
+            "How did the structure help the song's message?",
+          ],
+        },
+      },
+      {
+        id: 13,
+        title: "Writing Activity: Plan Your Lyrics",
+        summary: "Pick a topic and plan",
+        content: {
+          type: "apply",
+          body: "Now it's your turn to write.\n\nChoose one topic:",
+          examples: [
+            "friendship",
+            "courage",
+            "belonging",
+            "dreams",
+            "growing up",
+            "school life",
+            "home / whānau",
+          ],
+          tip: "Plan first: My song is about... | The feeling I want to create is... | My hook line is...",
+        },
+      },
+      {
+        id: 14,
+        title: "Write a Verse and Chorus",
+        summary: "One verse + one chorus",
+        content: {
+          type: "apply",
+          body: "Write:\n\n**One verse** — This tells the story or gives details.\n\n**One chorus** — This shares the main message and should be memorable.\n\nTry to include at least **two** of these features:",
+          examples: [
+            "repetition",
+            "rhyme",
+            "imagery",
+          ],
+        },
+      },
+      {
+        id: 15,
+        title: "Share and Improve",
+        summary: "Partner feedback",
+        content: {
+          type: "apply",
+          body: "With a partner:\n\n1. Read your verse and chorus aloud.\n2. Tell your partner one line you liked.\n3. Suggest one way to make the lyrics stronger.\n\n**Feedback sentence starters:**",
+          examples: [
+            "I liked the line...",
+            "I noticed you used...",
+            "You could make it stronger by...",
+            "Your chorus is memorable because...",
+          ],
+        },
+      },
+      {
+        id: 16,
+        title: "Exit Ticket",
+        summary: "Before you leave",
+        content: {
+          type: "evaluate",
+          body: "Answer these before you leave:",
+          examples: [
+            "1. What is one language feature used in lyrics?",
+            "2. What is the difference between a verse and a chorus?",
+            "3. What is one lyric line you wrote today that you are proud of?",
+          ],
+          tip: "Final thought: Great lyrics are memorable because they use both **features** and **structure**.",
+        },
+      },
+    ],
+  },
+
   // ─── Group Discussion ─────────────────────────────────────────────
   {
     id: "t2-day1",
